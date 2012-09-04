@@ -5,7 +5,7 @@
 	<SDL/SDL.h>
 	<SDL.h>
 
-1325742239 c:\sdl\include\sdl.h
+1346754673 c:\sdl\include\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -24,14 +24,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_main.h
+1346754673 c:\sdl\include\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_stdinc.h
+1346754673 c:\sdl\include\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -57,7 +57,7 @@
 	<stdlib.h>
 	"close_code.h"
 
-1326114587 c:\sdl\include\sdl_config.h
+1346754673 c:\sdl\include\sdl_config.h
 	"SDL_platform.h"
 	"SDL_config_dreamcast.h"
 	"SDL_config_macos.h"
@@ -67,16 +67,16 @@
 	"SDL_config_os2.h"
 	"SDL_config_minimal.h"
 
-1325742239 c:\sdl\include\sdl_platform.h
+1346754673 c:\sdl\include\sdl_platform.h
 
-1326114594 c:\sdl\include\sdl_config_win32.h
+1346754673 c:\sdl\include\sdl_config_win32.h
 	"SDL_platform.h"
 
-1326114600 c:\sdl\include\begin_code.h
+1346754673 c:\sdl\include\begin_code.h
 
-1325742239 c:\sdl\include\close_code.h
+1346754673 c:\sdl\include\close_code.h
 
-1325742239 c:\sdl\include\sdl_audio.h
+1346754673 c:\sdl\include\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -86,24 +86,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_error.h
+1346754673 c:\sdl\include\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_endian.h
+1346754673 c:\sdl\include\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_mutex.h
+1346754673 c:\sdl\include\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_thread.h
+1346754673 c:\sdl\include\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -111,24 +111,24 @@
 	<process.h>
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_rwops.h
+1346754673 c:\sdl\include\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_cdrom.h
+1346754673 c:\sdl\include\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_cpuinfo.h
+1346754673 c:\sdl\include\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_events.h
+1346754673 c:\sdl\include\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -139,59 +139,65 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_active.h
+1346754673 c:\sdl\include\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_keyboard.h
+1346754673 c:\sdl\include\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_keysym.h
+1346754673 c:\sdl\include\sdl_keysym.h
 
-1325742239 c:\sdl\include\sdl_mouse.h
+1346754673 c:\sdl\include\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_video.h
+1346754673 c:\sdl\include\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_joystick.h
+1346754673 c:\sdl\include\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_quit.h
+1346754673 c:\sdl\include\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1325742239 c:\sdl\include\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl\include\sdl_timer.h
+1346754673 c:\sdl\include\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl\include\sdl_version.h
+1346754673 c:\sdl\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1346754673 c:\sdl\include\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1346754675 source:c:\users\daniel\google drive\tnd005\project\superepicspelofdoom\main.cpp
+	<cstdlib>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL.h>
 
