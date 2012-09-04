@@ -1,0 +1,3 @@
+Lägg SDL-mappen i C:\
+
+dvs. så de ser ut så här "C:\SDL"
