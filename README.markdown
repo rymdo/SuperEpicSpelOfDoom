@@ -1,4 +1,4 @@
-## Vad behövs göras för att projektet ska köras ordentligt?
--kopiera mappen SDL i **"\lib"** till **"C:\"**  --> **C:\SDL**
+## What has to be done to run the project?
+-copy folder **"SDL"** in **"\lib"** to **"C:\"**  --> **C:\SDL**
 
-MER?!
+what More?!
