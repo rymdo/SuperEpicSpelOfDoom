@@ -42,7 +42,11 @@
 			<Add library="dxguid" />
 			<Add directory="C:\SDL\lib" />
 		</Linker>
+		<Unit filename="include\Game.h" />
+		<Unit filename="include\Surface.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src\Game.cpp" />
+		<Unit filename="src\Surface.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
