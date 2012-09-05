@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1346857489 source:c:\users\rymdo\documents\github\superepicspelofdoom\main.cpp
+1346858114 source:c:\users\rymdo\documents\github\superepicspelofdoom\main.cpp
 	<SDL/SDL.h>
 	"include/Game.h"
+	"include/Surface.h"
 
 1346754673 c:\sdl\include\sdl.h
 	"SDL_main.h"
@@ -202,10 +203,21 @@
 1346852706 source:c:\users\areua\documents\github\superepicspelofdoom\main.cpp
 	<SDL/SDL.h>
 
-1346857478 source:c:\users\rymdo\documents\github\superepicspelofdoom\src\game.cpp
+1346860852 source:c:\users\rymdo\documents\github\superepicspelofdoom\src\game.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
 	"../include/Game.h"
+	"../include/Surface.h"
+
+1346860497 c:\users\rymdo\documents\github\superepicspelofdoom\include\game.h
 	<SDL/SDL.h>
 
-1346857197 c:\users\rymdo\documents\github\superepicspelofdoom\include\game.h
+1346860200 c:\users\rymdo\documents\github\superepicspelofdoom\include\surface.h
 	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+
+1346860888 source:c:\users\rymdo\documents\github\superepicspelofdoom\src\surface.cpp
+	"../include/Surface.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
 

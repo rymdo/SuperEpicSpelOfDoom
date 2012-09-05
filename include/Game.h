@@ -19,6 +19,7 @@ class Game
     private:
         bool            run;
         SDL_Surface*    surface;
+        SDL_Surface*    surface_test;
 
 };
 

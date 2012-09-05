@@ -1,5 +1,6 @@
 #include <SDL/SDL.h>
 #include "include/Game.h"
+#include "include/Surface.h"
 
 
 int main ( int argc, char** argv )

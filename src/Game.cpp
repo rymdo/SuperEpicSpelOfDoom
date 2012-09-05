@@ -1,12 +1,14 @@
-#include "../include/Game.h"
 #include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include "../include/Game.h"
+#include "../include/Surface.h"
 
 
 Game::Game()
 {
-    run     = true;
-    surface = NULL;
-    //ctor
+    run             = true;
+    surface         = NULL;
+    surface_test    = NULL;
 }
 
 Game::~Game()
@@ -44,6 +46,11 @@ bool Game::Init()
         return false;
     }
 
+    if((surface_test = Surface::Load("files/background/lava.jpg")) == NULL)
+    {
+        return false;
+    }
+
     return true;
 }
 
@@ -64,11 +71,14 @@ void Game::Loop()
 
 void Game::Render()
 {
-
+    Surface::Draw(surface, surface_test, 0, 0);
+    SDL_Flip(surface);
 }
 
 void Game::CleanUp()
 {
+    SDL_FreeSurface(surface);
+    SDL_FreeSurface(surface_test);
     SDL_Quit();
 }
 
