@@ -1,26 +1,18 @@
 #include <SDL/SDL.h>
+#include "include/Game.h"
 
 
 int main ( int argc, char** argv )
 {
-    // initialize SDL video
-    if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-    {
-        printf( "Unable to init SDL: %s\n", SDL_GetError() );
-        return 1;
-    }
+    Game game;
+    game.Execute();
 
-    // make sure SDL cleans up before exit
-    atexit(SDL_Quit);
+    return 0;
+}
 
-    // create a new window
-    SDL_Surface* screen = SDL_SetVideoMode(640, 480, 16,
-                                           SDL_HWSURFACE|SDL_DOUBLEBUF);
-    if ( !screen )
-    {
-        printf("Unable to set 640x480 video: %s\n", SDL_GetError());
-        return 1;
-    }
+
+/*
+// initialize SDL video
 
     // load an image
     SDL_Surface* bmp = SDL_LoadBMP("cb.bmp");
@@ -36,31 +28,8 @@ int main ( int argc, char** argv )
     dstrect.y = (screen->h - bmp->h) / 2;
 
     // program main loop
-    bool done = false;
-    while (!done)
-    {
-        // message processing loop
-        SDL_Event event;
-        while (SDL_PollEvent(&event))
-        {
-            // check for messages
-            switch (event.type)
-            {
-                // exit if the window is closed
-            case SDL_QUIT:
-                done = true;
-                break;
 
-                // check for keypresses
-            case SDL_KEYDOWN:
-                {
-                    // exit if ESCAPE is pressed
-                    if (event.key.keysym.sym == SDLK_ESCAPE)
-                        done = true;
-                    break;
-                }
-            } // end switch
-        } // end of message processing
+
 
         // DRAWING STARTS HERE
 
@@ -73,13 +42,12 @@ int main ( int argc, char** argv )
         // DRAWING ENDS HERE
 
         // finally, update the screen :)
-        SDL_Flip(screen);
-    } // end main loop
+
+     // end main loop
 
     // free loaded bitmap
     SDL_FreeSurface(bmp);
 
     // all is well ;)
     printf("Exited cleanly\n");
-    return 0;
-}
+    */

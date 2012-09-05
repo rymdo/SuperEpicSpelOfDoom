@@ -1,9 +1,7 @@
 # depslib dependency file v1.0
-1346836354 source:c:\users\rymdo\documents\github\superepicspelofdoom\main.cpp
-	<cstdlib>
-	<stdlib.h>
+1346857489 source:c:\users\rymdo\documents\github\superepicspelofdoom\main.cpp
 	<SDL/SDL.h>
-	<SDL.h>
+	"include/Game.h"
 
 1346754673 c:\sdl\include\sdl.h
 	"SDL_main.h"
@@ -202,5 +200,12 @@
 	<SDL.h>
 
 1346852706 source:c:\users\areua\documents\github\superepicspelofdoom\main.cpp
+	<SDL/SDL.h>
+
+1346857478 source:c:\users\rymdo\documents\github\superepicspelofdoom\src\game.cpp
+	"../include/Game.h"
+	<SDL/SDL.h>
+
+1346857197 c:\users\rymdo\documents\github\superepicspelofdoom\include\game.h
 	<SDL/SDL.h>
 
