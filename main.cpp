@@ -1,13 +1,5 @@
-#ifdef __cplusplus
-    #include <cstdlib>
-#else
-    #include <stdlib.h>
-#endif
-#ifdef __APPLE__
 #include <SDL/SDL.h>
-#else
-#include <SDL.h>
-#endif
+
 
 int main ( int argc, char** argv )
 {
@@ -37,7 +29,7 @@ int main ( int argc, char** argv )
         printf("Unable to load bitmap: %s\n", SDL_GetError());
         return 1;
     }
-    
+
     // centre the bitmap on screen
     SDL_Rect dstrect;
     dstrect.x = (screen->w - bmp->w) / 2;
@@ -71,7 +63,7 @@ int main ( int argc, char** argv )
         } // end of message processing
 
         // DRAWING STARTS HERE
-        
+
         // clear screen
         SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
 
