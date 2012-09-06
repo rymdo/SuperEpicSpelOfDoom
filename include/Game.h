@@ -2,8 +2,12 @@
 #define GAME_H
 
 #include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include "../include/Surface.h"
+#include "../include/Event.h"
 
-class Game
+
+class Game : public Event
 {
     public:
         Game();
@@ -14,6 +18,7 @@ class Game
         void Loop();
         void Render();
         void CleanUp();
+        void Exit();
 
     protected:
     private:

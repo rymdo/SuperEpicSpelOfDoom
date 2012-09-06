@@ -2,6 +2,7 @@
 #include <SDL/SDL_image.h>
 #include "../include/Game.h"
 #include "../include/Surface.h"
+#include "../include/Event.h"
 
 
 Game::Game()
@@ -58,10 +59,13 @@ bool Game::Init()
 
 bool Game::Event(SDL_Event* event)
 {
-    if(event->type == SDL_QUIT)
-    {
-        run = false;
-    }
+    Event::OnEvent(event);
+    return true;
+}
+
+void Game::Exit()
+{
+    run = false;
 }
 
 void Game::Loop()
@@ -112,6 +116,15 @@ void Game::loop()
             } // end switch
         } // end of message processing
         SDL_Flip(screen);
+    }
+}
+
+
+bool Game::Event(SDL_Event* event)
+{
+    if(event->type == SDL_QUIT)
+    {
+        run = false;
     }
 }
 */
