@@ -221,3 +221,26 @@
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 
+1346937931 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\game.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Game.h"
+	"../include/Surface.h"
+
+1346937931 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\game.h
+	<SDL/SDL.h>
+
+1346937931 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\surface.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+
+1346937931 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\surface.cpp
+	"../include/Surface.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+
+1346937931 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\main.cpp
+	<SDL/SDL.h>
+	"include/Game.h"
+	"include/Surface.h"
+
