@@ -221,7 +221,7 @@
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 
-1346946210 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\game.cpp
+1346946476 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\game.cpp
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	"../include/Game.h"
@@ -256,4 +256,27 @@
 1346946467 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\event.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
+
+1347020574 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\graphics.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Graphics.h"
+	"../include/Map.h"
+
+1347020769 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\graphics.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Map.h"
+
+1347021199 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\map.h
+	<string>
+	<vector>
+
+1347020875 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\map.cpp
+	"../include/Map.h"
+
+1347021332 source:c:\users\rymdo\documents\smartgit\superepicspelofdoom\src\sprite.cpp
+	"../include/Sprite.h"
+
+1347021429 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\sprite.h
 
