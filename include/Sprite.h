@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//Basklass Sprite som symboliserar "ritbara" objekt
 class Sprite
 {
     public:
@@ -23,7 +24,7 @@ class Sprite
         SDL_Surface* src;
         int posX;
         int posY;
-        static vector<Sprite*> list;
+        static vector<Sprite*> list; //lista med alla instansierade Sprites
 };
 
 #endif // SPRITE_H
