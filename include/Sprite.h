@@ -1,15 +1,29 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include <string>
+#include <vector>
+
+#include "../include/Surface.h"
+
+using namespace std;
 
 class Sprite
 {
     public:
-        Sprite();
+        Sprite(int X, int Y);
         virtual ~Sprite();
-    protected:
+        void Load(string file);
+        void Draw(SDL_Surface* dest);
+        static void DrawAll(SDL_Surface* dest);
+
     private:
-        int test;
+        SDL_Surface* src;
+        int posX;
+        int posY;
+        static vector<Sprite*> list;
 };
 
 #endif // SPRITE_H

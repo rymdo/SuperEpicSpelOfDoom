@@ -2,6 +2,7 @@
 #include "include/Game.h"
 #include "include/Surface.h"
 
+using namespace std;
 
 int main ( int argc, char** argv )
 {
@@ -10,7 +11,6 @@ int main ( int argc, char** argv )
 
     return 0;
 }
-
 
 /*
 // initialize SDL video

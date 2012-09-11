@@ -4,12 +4,15 @@
 #include "../include/Surface.h"
 #include "../include/Event.h"
 
+#include "../include/Sprite.h"
+
+using namespace std;
 
 Game::Game()
 {
     run             = true;
-    surface         = NULL;
-    surface_test    = NULL;
+    //surface         = NULL;
+    //surface_test    = NULL;
 }
 
 Game::~Game()
@@ -46,11 +49,14 @@ bool Game::Init()
     {
         return false;
     }
-
+    /*
     if((surface_test = Surface::Load("files/background/lava.jpg")) == NULL)
     {
         return false;
-    }
+    }*/
+
+    Sprite* tmpSprite = new Sprite(0, 0);
+    tmpSprite->Load("files/background/lava.jpg");
 
     return true;
 }
@@ -76,13 +82,15 @@ void Game::Loop()
 void Game::Render()
 {
     Surface::Draw(surface, surface_test, 0, 0);
+    Sprite::DrawAll(surface);
+
     SDL_Flip(surface);
 }
 
 void Game::CleanUp()
 {
     SDL_FreeSurface(surface);
-    SDL_FreeSurface(surface_test);
+    //SDL_FreeSurface(surface_test);
     SDL_Quit();
 }
 

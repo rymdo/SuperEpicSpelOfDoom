@@ -280,3 +280,50 @@
 
 1347021429 c:\users\rymdo\documents\smartgit\superepicspelofdoom\include\sprite.h
 
+1347362022 source:c:\users\daniel\google drive\superepicspelofdoom\src\event.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Event.h"
+
+1347362019 c:\users\daniel\google drive\superepicspelofdoom\include\event.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+
+1347364716 source:c:\users\daniel\google drive\superepicspelofdoom\src\game.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Game.h"
+	"../include/Surface.h"
+	"../include/Event.h"
+	"../include/Sprite.h"
+
+1347364416 c:\users\daniel\google drive\superepicspelofdoom\include\game.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Surface.h"
+	"../include/Event.h"
+
+1347363336 c:\users\daniel\google drive\superepicspelofdoom\include\surface.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<string>
+	<vector>
+
+1347362031 source:c:\users\daniel\google drive\superepicspelofdoom\main.cpp
+	<SDL/SDL.h>
+	"include/Game.h"
+	"include/Surface.h"
+
+1347365729 c:\users\daniel\google drive\superepicspelofdoom\include\sprite.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<string>
+	<vector>
+	"../include/Surface.h"
+
+1347365678 source:c:\users\daniel\google drive\superepicspelofdoom\src\sprite.cpp
+	"../include/Sprite.h"
+
+1347364758 source:c:\users\daniel\google drive\superepicspelofdoom\src\surface.cpp
+	"../include/Surface.h"
+

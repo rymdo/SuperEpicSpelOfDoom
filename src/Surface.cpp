@@ -1,10 +1,13 @@
 #include "../include/Surface.h"
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
 
-Surface::Surface()
+using namespace std;
+
+Surface::Surface(string file, SDL_Surface* surf)
 {
+    filename = file;
+    surface = surf;
 
+    list.push_back(this);
 }
 
 Surface::~Surface()
@@ -24,6 +27,8 @@ SDL_Surface* Surface::Load(char* file)
 
     ret = SDL_DisplayFormatAlpha(temp);
     SDL_FreeSurface(temp);
+
+    new Surface(string(file), ret);
 
     return ret;
 }

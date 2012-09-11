@@ -6,6 +6,7 @@
 #include "../include/Surface.h"
 #include "../include/Event.h"
 
+using namespace std;
 
 class Game : public Event
 {

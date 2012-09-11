@@ -2,6 +2,8 @@
 #include <SDL/SDL_image.h>
 #include "../include/Event.h"
 
+using namespace std;
+
 Event::Event()
 {
     //ctor
