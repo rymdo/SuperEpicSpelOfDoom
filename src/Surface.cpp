@@ -31,7 +31,10 @@ SDL_Surface* Surface::getLoaded(char* file)
     for(int i=0; i<list.size(); i++)
     {
         if(list[i]->getFilename()==file)
+        {
+            cout << list[i]->getFilename() << " already loaded, returning loaded SDL_Surface...\n";
             return list[i]->getSurface();
+        }
     }
     return NULL;
 }
@@ -56,6 +59,8 @@ SDL_Surface* Surface::Load(char* file)
     SDL_FreeSurface(temp);
 
     new Surface(string(file), ret);
+
+    cout << list.size() << " surfaces loaded\n";
 
     return ret;
 }

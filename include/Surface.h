@@ -5,6 +5,7 @@
 #include <SDL/SDL_image.h>
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 

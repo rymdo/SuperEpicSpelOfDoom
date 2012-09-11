@@ -3,6 +3,9 @@
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
+#include <iostream>
+#include <fstream>
+
 #include "../include/Surface.h"
 #include "../include/Event.h"
 
