@@ -16,8 +16,11 @@ class Surface
 
         static SDL_Surface* Load(char* file);
         static bool Draw(SDL_Surface* dest, SDL_Surface* src, int x, int y);
+        SDL_Surface* getSurface();
+        string getFilename();
     private:
-        vector<Surface*> list;
+        static SDL_Surface* getLoaded(char* file);
+        static vector<Surface*> list;
         SDL_Surface* surface;
         string filename;
 };
