@@ -44,10 +44,12 @@
 		</Linker>
 		<Unit filename="include\Event.h" />
 		<Unit filename="include\Game.h" />
+		<Unit filename="include\Sprite.h" />
 		<Unit filename="include\Surface.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src\Event.cpp" />
 		<Unit filename="src\Game.cpp" />
+		<Unit filename="src\Sprite.cpp" />
 		<Unit filename="src\Surface.cpp" />
 		<Extensions>
 			<code_completion />

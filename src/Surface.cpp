@@ -4,8 +4,8 @@ using namespace std;
 
 Surface::Surface(string file, SDL_Surface* surf)
 {
-    filename = file;
-    surface = surf;
+    filename = file; //string
+    surface = surf; //SDL_Surface*
 
     list.push_back(this);
 }
@@ -17,8 +17,14 @@ Surface::~Surface()
 
 SDL_Surface* Surface::Load(char* file)
 {
-    SDL_Surface* temp   = NULL;
+    //KOLLA OM FILNAMNET FINNS I LISTAN list OCH RETURNERA DEN POINTERN
     SDL_Surface* ret    = NULL;
+    //ret = getLoaded(file); //<-- getLoaded returnerar SDL_Surface*
+
+    //if (ret != NULL)
+    //    return ret;
+
+    SDL_Surface* temp   = NULL;
 
     if((temp = IMG_Load(file))==NULL)
     {

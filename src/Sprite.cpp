@@ -15,7 +15,6 @@ Sprite::Sprite(int X, int Y)
 
 void Sprite::Load(string file)
 {
-    src = NULL;
     src = Surface::Load((char*)file.c_str());
 }
 

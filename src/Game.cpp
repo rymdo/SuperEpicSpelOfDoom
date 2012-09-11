@@ -58,6 +58,9 @@ bool Game::Init()
     Sprite* tmpSprite = new Sprite(0, 0);
     tmpSprite->Load("files/background/lava.jpg");
 
+    Sprite* link = new Sprite(100, 100);
+    link->Load("files/sprites/link/linkD1.gif");
+
     return true;
 }
 

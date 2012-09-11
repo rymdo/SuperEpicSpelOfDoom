@@ -289,7 +289,7 @@
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 
-1347364716 source:c:\users\daniel\google drive\superepicspelofdoom\src\game.cpp
+1347365990 source:c:\users\daniel\google drive\superepicspelofdoom\src\game.cpp
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	"../include/Game.h"
@@ -321,7 +321,7 @@
 	<vector>
 	"../include/Surface.h"
 
-1347365678 source:c:\users\daniel\google drive\superepicspelofdoom\src\sprite.cpp
+1347366184 source:c:\users\daniel\google drive\superepicspelofdoom\src\sprite.cpp
 	"../include/Sprite.h"
 
 1347364758 source:c:\users\daniel\google drive\superepicspelofdoom\src\surface.cpp
