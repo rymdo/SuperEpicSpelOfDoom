@@ -327,3 +327,47 @@
 1347364758 source:c:\users\daniel\google drive\superepicspelofdoom\src\surface.cpp
 	"../include/Surface.h"
 
+1347366671 source:c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\src\event.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Event.h"
+
+1347366671 c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\include\event.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+
+1347366671 source:c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\src\game.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Game.h"
+	"../include/Surface.h"
+	"../include/Event.h"
+	"../include/Sprite.h"
+
+1347366671 c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\include\game.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"../include/Surface.h"
+	"../include/Event.h"
+
+1347368012 c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\include\surface.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<string>
+	<vector>
+
+1347366671 c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\include\sprite.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<string>
+	<vector>
+	"../include/Surface.h"
+
+1347366671 source:c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\src\sprite.cpp
+	"../include/Sprite.h"
+
+1347366671 source:c:\documents and settings\bg\mina dokument\github\superepicspelofdoom\main.cpp
+	<SDL/SDL.h>
+	"include/Game.h"
+	"include/Surface.h"
+

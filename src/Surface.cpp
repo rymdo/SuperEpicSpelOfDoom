@@ -1,6 +1,7 @@
 #include "../include/Surface.h"
 
 using namespace std;
+vector<Surface*> Surface::list;
 
 Surface::Surface(string file, SDL_Surface* surf)
 {
@@ -15,14 +16,34 @@ Surface::~Surface()
     //dtor
 }
 
+SDL_Surface* Surface::getSurface()
+{
+    return surface;
+}
+
+string Surface::getFilename()
+{
+    return filename;
+}
+
+SDL_Surface* Surface::getLoaded(char* file)
+{
+    for(int i=0; i<list.size(); i++)
+    {
+        if(list[i]->getFilename()==file)
+            return list[i]->getSurface();
+    }
+    return NULL;
+}
+
 SDL_Surface* Surface::Load(char* file)
 {
     //KOLLA OM FILNAMNET FINNS I LISTAN list OCH RETURNERA DEN POINTERN
     SDL_Surface* ret    = NULL;
-    //ret = getLoaded(file); //<-- getLoaded returnerar SDL_Surface*
+    ret = getLoaded(file); //<-- getLoaded returnerar SDL_Surface*
 
-    //if (ret != NULL)
-    //    return ret;
+    if (ret != NULL)
+        return ret;
 
     SDL_Surface* temp   = NULL;
 
