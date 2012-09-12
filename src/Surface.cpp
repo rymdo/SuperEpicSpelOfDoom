@@ -46,7 +46,7 @@ SDL_Surface* Surface::getLoaded(char* file)
 //Ladda ny bildfil och spara i en SDL_Surface, sparar ett relationsobjekt Surface, mellan SDL_Surface och filename
 /*static*/ SDL_Surface* Surface::Load(char* file)
 {
-    SDL_Surface* retg = getLoaded(file); //<-- getLoaded returnerar SDL_Surface* eller NULL
+    SDL_Surface* ret = getLoaded(file); //<-- getLoaded returnerar SDL_Surface* eller NULL
 
     if (ret != NULL)
         return ret; //om getLoaded lyckades hämta en redan laddad bild

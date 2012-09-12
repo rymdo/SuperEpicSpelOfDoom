@@ -22,6 +22,8 @@ void Sprite::Load(string file)
 //Ritar ut instansens src på dest via Surface::Draw
 void Sprite::Draw(SDL_Surface* dest)
 {
+    /*if(src->w < 400)
+        posX++;*/
     Surface::Draw(dest, src, posX, posY);
 }
 
