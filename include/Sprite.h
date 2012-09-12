@@ -23,7 +23,7 @@ class Sprite
         SDL_Surface* src;
         int posX;
         int posY;
-        static vector<Sprite*> list;
+        static vector<Sprite*> list; //lista för alla sprites
 };
 
 #endif // SPRITE_H

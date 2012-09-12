@@ -21,7 +21,7 @@ class Surface
         string getFilename();
     private:
         static SDL_Surface* getLoaded(char* file);
-        static vector<Surface*> list;
+        static vector<Surface*> list; //Lista med Surfaces som håller koll på vad som laddadts in
         SDL_Surface* surface;
         string filename;
 };
