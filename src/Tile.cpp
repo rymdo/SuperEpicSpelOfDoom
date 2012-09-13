@@ -1,9 +1,8 @@
-#include "../include/Tile.h"
-
+#include "Tile.h"
 
 Tile::Tile()
 {
-
+    //ctor
 }
 
 Tile::~Tile()

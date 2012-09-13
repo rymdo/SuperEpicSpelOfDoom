@@ -19,10 +19,12 @@ class Sprite
         void Draw(SDL_Surface* dest);
         static void DrawAll(SDL_Surface* dest);
 
-    private:
-        SDL_Surface* src;
+    protected:
         int posX;
         int posY;
+
+    private:
+        SDL_Surface* src;
         static vector<Sprite*> list; //lista för alla sprites
 };
 
