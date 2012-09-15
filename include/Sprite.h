@@ -13,7 +13,7 @@ using namespace std;
 class Sprite
 {
     public:
-        Sprite(int X, int Y);
+        Sprite(int X=0, int Y=0);
         virtual ~Sprite();
         void Load(string file);
         void Draw(SDL_Surface* dest);

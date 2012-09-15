@@ -55,6 +55,7 @@ SDL_Surface* Surface::getLoaded(char* file)
 
     if((temp = IMG_Load(file))==NULL)
     {
+        cout << "no such file: " << file << endl;
         return NULL;
     }
 

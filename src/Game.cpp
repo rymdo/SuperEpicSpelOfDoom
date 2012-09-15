@@ -4,7 +4,7 @@
 #include "../include/Game.h"
 #include "../include/Surface.h"
 #include "../include/Event.h"
-
+#include "../include/Tile.h"
 #include "../include/Sprite.h"
 
 using namespace std;
@@ -56,14 +56,19 @@ bool Game::Init()
         return false;
     }*/
 
-    Sprite* tmpSprite = new Sprite(0, 0);
-    tmpSprite->Load("files/background/lava.jpg");
+    if (!Tile::loadAll())
+        return false;
+
+    /*Sprite* tmpSprite = new Sprite(0, 0);
+    tmpSprite->Load("files/background/lava.jpg");*/
 
     Sprite* link = new Sprite(100, 100);
     link->Load("files/sprites/link/linkD1.gif");
 
     Sprite* link2 = new Sprite(200, 200);
     link2->Load("files/sprites/link/linkD1.gif");
+
+
 
     return true;
 }
