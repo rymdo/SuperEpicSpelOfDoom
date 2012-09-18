@@ -16,7 +16,7 @@ struct Vec
 class Object : Sprite
 {
     public:
-        Object(int X=0, int Y=0);
+        Object(int X=0, int Y=0, string file="files/sprites/link/linkD1.gif");
         virtual ~Object();
         void Update();
         void SetMovement(float X, float Y);
