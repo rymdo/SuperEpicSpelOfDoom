@@ -2,6 +2,7 @@
 
 using namespace std;
 /*static*/ vector<Surface*> Surface::list;
+/*static*/ Camera* Surface::cam;
 
 //Constructor
 Surface::Surface(string file, SDL_Surface* surf)
@@ -36,7 +37,7 @@ SDL_Surface* Surface::getLoaded(char* file)
     {
         if(list[i]->getFilename()==file)
         {
-            cout << list[i]->getFilename() << " already loaded, returning loaded SDL_Surface...\n";
+            //cout << list[i]->getFilename() << " already loaded, returning loaded SDL_Surface...\n";
             return list[i]->getSurface();
         }
     }
@@ -77,8 +78,14 @@ SDL_Surface* Surface::getLoaded(char* file)
         return false;
     }
 
-    SDL_Rect destR;
+    //kontrollerar att de sprites som skrivs ut ej ligger utanför skärmen
+    x -= Surface::cam->getX();
+    y -= Surface::cam->getY();
 
+    if(x < 0 || x>=Surface::cam->getW() || y < 0 || y >= Surface::cam->getH())
+        return false;
+
+    SDL_Rect destR;
     destR.x = x;
     destR.y = y;
 
@@ -86,3 +93,8 @@ SDL_Surface* Surface::getLoaded(char* file)
 
     return true;
 }
+
+    void Surface::setCamera(Camera* a)
+    {
+        Surface::cam = a;
+    }

@@ -5,6 +5,7 @@
 #include <SDL/SDL_image.h>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "../include/Surface.h"
 
@@ -13,15 +14,18 @@ using namespace std;
 class Sprite
 {
     public:
-        Sprite(int X=0, int Y=0);
+        Sprite(int X=0, int Y=0, int Z=0);
         virtual ~Sprite();
         void Load(string file);
-        void Draw(SDL_Surface* dest);
+        bool Draw(SDL_Surface* dest);
         static void DrawAll(SDL_Surface* dest);
+        friend bool operator<(Sprite a, Sprite b);
+        static bool zSort(Sprite* a, Sprite* b);
 
     protected:
         int posX;
         int posY;
+        int posZ;
 
     private:
         SDL_Surface* src;

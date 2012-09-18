@@ -9,6 +9,8 @@
 #include "../include/Surface.h"
 #include "../include/Event.h"
 #include "../include/Sprite.h"
+#include "../include/Camera.h"
+#include "../include/Tile.h"
 
 
 using namespace std;

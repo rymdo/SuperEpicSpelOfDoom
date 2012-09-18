@@ -33,16 +33,16 @@ bool Tile::loadAll()
                 column = 0;
                 continue;
             }
-            else if(c=='a') //istället för massa else if här, sätt ihop strängarna -> "../files/tiles/" + c + ".jpg" som parameter för load
-            {
-                Sprite* tmpSprite = new Sprite(column*width, row*height);
-                tmpSprite->Load("files/tiles/a.png");
-            }
-            else if(c=='b')
-            {
-                Sprite* tmpSprite = new Sprite(column*width, row*height);
-                tmpSprite->Load("files/tiles/b.png");
-            }
+
+            string cStr(1, c);
+
+            string filepath = "files/tiles/";
+            filepath.append(cStr);
+            filepath.append(".png");
+
+            Sprite* tmpSprite = new Sprite(column*width, row*height);
+            tmpSprite->Load(filepath);
+
             column++;
         }
         while(!in.eof());

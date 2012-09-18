@@ -1,11 +1,4 @@
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-
 #include "../include/Game.h"
-#include "../include/Surface.h"
-#include "../include/Event.h"
-#include "../include/Tile.h"
-#include "../include/Sprite.h"
 
 using namespace std;
 
@@ -59,16 +52,18 @@ bool Game::Init()
     if (!Tile::loadAll())
         return false;
 
+    //TESTLINKAR
     player = new Sprite(50, 50);
     player->Load("files/sprites/link/linkD1.gif");
 
-    //Sprite* link = new Sprite(100, 100);
-    //link->Load("files/sprites/link/linkD1.gif");
+    Sprite* link = new Sprite(100, 100, 2);
+    link->Load("files/sprites/link/LinkRunRightMoving.gif");
 
-    //Sprite* link2 = new Sprite(200, 200);
-    //link2->Load("files/sprites/link/linkD1.gif");
+    Sprite* link2 = new Sprite(100, 110, 1);
+    link2->Load("files/sprites/link/linkD1.gif");
 
-
+    Camera* cam = new Camera();
+    Surface::setCamera(cam);
 
     return true;
 }

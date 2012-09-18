@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "../include/Camera.h"
 
 using namespace std;
 
@@ -19,9 +20,11 @@ class Surface
         static bool Draw(SDL_Surface* dest, SDL_Surface* src, int x, int y);
         SDL_Surface* getSurface();
         string getFilename();
+        static void setCamera(Camera* cam);
     private:
         static SDL_Surface* getLoaded(char* file);
         static vector<Surface*> list; //Lista med Surfaces som håller koll på vad som laddadts in
+        static Camera* cam;
         SDL_Surface* surface;
         string filename;
 };
