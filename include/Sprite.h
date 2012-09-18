@@ -27,6 +27,14 @@ class Sprite
         int posY;
         int posZ;
 
+        void setPos(int X, int Y);
+        virtual void Update();
+    protected:
+        int posX;
+        int posY;
+        float FposX;
+        float FposY;
+
     private:
         SDL_Surface* src;
         static vector<Sprite*> list; //lista för alla sprites

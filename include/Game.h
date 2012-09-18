@@ -11,6 +11,7 @@
 #include "../include/Sprite.h"
 #include "../include/Camera.h"
 #include "../include/Tile.h"
+#include "../include/Object.h"
 
 
 using namespace std;
@@ -34,7 +35,8 @@ class Game : public Event
     private:
         bool            run;
         SDL_Surface*    surface;
-        Sprite*         player;
+        //Sprite*         player;
+        Object*         player;
 
 };
 

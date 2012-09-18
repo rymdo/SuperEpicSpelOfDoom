@@ -83,17 +83,48 @@ void Game::Exit()
 
 void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
-    int up, down, left, right;
+    if(sym == SDLK_DOWN)
+    {
+        player->SetMovement(0,2);
+    }
+    if(sym == SDLK_UP)
+    {
+        player->SetMovement(0,-2);
+    }
+    if(sym == SDLK_LEFT)
+    {
+        player->SetMovement(-2,0);
+    }
+    if(sym == SDLK_RIGHT)
+    {
+        player->SetMovement(2,0);
+    }
 }
 
 void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
-
+    if(sym == SDLK_DOWN)
+    {
+        player->SetMovement(0,0);
+    }
+    if(sym == SDLK_UP)
+    {
+        player->SetMovement(0,0);
+    }
+    if(sym == SDLK_LEFT)
+    {
+        player->SetMovement(0,0);
+    }
+    if(sym == SDLK_RIGHT)
+    {
+        player->SetMovement(0,0);
+    }
 }
 
 void Game::Loop()
 {
 
+    SDL_Delay(30);
 }
 
 void Game::Render()

@@ -11,6 +11,9 @@ Sprite::Sprite(int X, int Y, int Z)
     posY = Y;
     posZ = Z;
 
+    FposX = (float)posX;
+    FposY = (float)posY;
+
     list.push_back(this); //Sparar instansen i statiska Sprite::list
 }
 
@@ -34,6 +37,7 @@ void Sprite::DrawAll(SDL_Surface* dest)
 
     for(int i=0; i<list.size(); i++)
     {
+        list[i]->Update();
         list[i]->Draw(dest);
     }
 }
@@ -51,6 +55,16 @@ bool operator<(Sprite a, Sprite b)
         return (a.posY < b.posY);
 
     return (a.posZ<b.posZ);
+
+void Sprite::setPos(int X, int Y)
+{
+    posX = X;
+    posY = Y;
+}
+
+void Sprite::Update()
+{
+
 }
 
 Sprite::~Sprite()
