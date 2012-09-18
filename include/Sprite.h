@@ -19,6 +19,7 @@ class Sprite
         void Load(string file);
         bool Draw(SDL_Surface* dest);
         static void DrawAll(SDL_Surface* dest);
+
         friend bool operator<(Sprite a, Sprite b);
         static bool zSort(Sprite* a, Sprite* b);
 
@@ -32,6 +33,13 @@ class Sprite
     protected:
         int posX;
         int posY;
+
+        void setPos(int X, int Y);
+        virtual void Update();
+    protected:
+        int posX;
+        int posY;
+
         float FposX;
         float FposY;
 

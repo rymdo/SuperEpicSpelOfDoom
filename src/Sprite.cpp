@@ -55,6 +55,7 @@ bool operator<(Sprite a, Sprite b)
         return (a.posY < b.posY);
 
     return (a.posZ<b.posZ);
+}
 
 void Sprite::setPos(int X, int Y)
 {

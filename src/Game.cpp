@@ -52,9 +52,8 @@ bool Game::Init()
     if (!Tile::loadAll())
         return false;
 
-    //TESTLINKAR
-    player = new Sprite(50, 50);
-    player->Load("files/sprites/link/linkD1.gif");
+    player = new Object(150, 50, "files/sprites/link/linkD1.gif");
+    //player->Load("files/sprites/link/linkD1.gif");
 
     Sprite* link = new Sprite(100, 100, 2);
     link->Load("files/sprites/link/LinkRunRightMoving.gif");
