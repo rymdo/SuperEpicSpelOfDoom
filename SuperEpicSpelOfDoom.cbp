@@ -44,14 +44,18 @@
 			<Add library="dxguid" />
 			<Add directory="C:\SDL\lib" />
 		</Linker>
+		<Unit filename="include\Camera.h" />
 		<Unit filename="include\Event.h" />
 		<Unit filename="include\Game.h" />
+		<Unit filename="include\Object.h" />
 		<Unit filename="include\Sprite.h" />
 		<Unit filename="include\Surface.h" />
 		<Unit filename="include\Tile.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src\Camera.cpp" />
 		<Unit filename="src\Event.cpp" />
 		<Unit filename="src\Game.cpp" />
+		<Unit filename="src\Object.cpp" />
 		<Unit filename="src\Sprite.cpp" />
 		<Unit filename="src\Surface.cpp" />
 		<Unit filename="src\Tile.cpp" />
