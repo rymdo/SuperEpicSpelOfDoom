@@ -52,17 +52,21 @@ bool Game::Init()
     if (!Tile::loadAll())
         return false;
 
-    player = new Object(150, 50, "files/sprites/link/linkD1.gif");
+    player = new Object(150, 50, 10, "files/sprites/link/linkD1.gif");
     //player->Load("files/sprites/link/linkD1.gif");
+    /*a call to player->Load() would be better. Where you dont define pahts to the files,
+    but the paths are stored in the code in the player class which derives from Object...
+    Then in the Load function for Player, all de needed surfaces are loaded via Surface::Load
+    and stored inside the player object...
+    */
 
-    Sprite* link = new Sprite(100, 100, 2);
-    link->Load("files/sprites/link/LinkRunRightMoving.gif");
-
-    Sprite* link2 = new Sprite(100, 110, 1);
+    Sprite* link2 = new Sprite(100, 110, 10);
     link2->Load("files/sprites/link/linkD1.gif");
 
     Camera* cam = new Camera();
     Surface::setCamera(cam);
+
+    gameTime = 0;
 
     return true;
 }
@@ -122,7 +126,11 @@ void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 
 void Game::Loop()
 {
+    Uint32 now = SDL_GetTicks();
+    Uint32 timeElapsed = now - gameTime;
+    gameTime = now;
 
+    Sprite::UpdateAll(timeElapsed);
     SDL_Delay(30);
 }
 

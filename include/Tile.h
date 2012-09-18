@@ -14,7 +14,7 @@ class Tile : Sprite
 {
     public:
         //Tile();
-        Tile(int X=0, int Y=0);
+        Tile(int X=0, int Y=5);
         virtual ~Tile();
         static bool loadAll();
         //void read(ifstream &in)

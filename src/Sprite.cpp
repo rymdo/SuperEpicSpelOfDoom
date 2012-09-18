@@ -29,21 +29,33 @@ bool Sprite::Draw(SDL_Surface* dest)
     Surface::Draw(dest, src, posX, posY);
 }
 
+void Sprite::Update(Uint32 timeElapsed)
+{
+
+}
+
 //Ritar ut alla instanser i Sprite::list
-void Sprite::DrawAll(SDL_Surface* dest)
+/*static*/ void Sprite::DrawAll(SDL_Surface* dest)
 {
     //sorterar vektorn efter vilket lager de ligger i (vilken z-koordinat de har) i stigande ordn.
     sort(list.begin(), list.end(), Sprite::zSort);
 
     for(int i=0; i<list.size(); i++)
     {
-        list[i]->Update();
         list[i]->Draw(dest);
     }
 }
 
+void Sprite::UpdateAll(Uint32 timeElapsed)
+{
+    for(int i=0; i<list.size(); i++)
+    {
+        list[i]->Update(timeElapsed);
+    }
+}
+
 //hjälper operatorn att hantera sorteringen av pekarelementen i vektorn
-bool Sprite::zSort(Sprite* a, Sprite* b)
+/*static*/ bool Sprite::zSort(Sprite* a, Sprite* b)
 {
     return *a<*b;
 }
@@ -61,11 +73,6 @@ void Sprite::setPos(int X, int Y)
 {
     posX = X;
     posY = Y;
-}
-
-void Sprite::Update()
-{
-
 }
 
 Sprite::~Sprite()

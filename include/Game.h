@@ -39,6 +39,7 @@ class Game : public Event
         SDL_Surface*    surface;
         //Sprite*         player;
         Object*         player;
+        Uint32          gameTime;
 
 };
 
