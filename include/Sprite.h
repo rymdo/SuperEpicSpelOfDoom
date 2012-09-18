@@ -18,10 +18,13 @@ class Sprite
         void Load(string file);
         void Draw(SDL_Surface* dest);
         static void DrawAll(SDL_Surface* dest);
-
+        void setPos(int X, int Y);
+        virtual void Update();
     protected:
         int posX;
         int posY;
+        float FposX;
+        float FposY;
 
     private:
         SDL_Surface* src;

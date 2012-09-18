@@ -9,6 +9,7 @@
 #include "../include/Surface.h"
 #include "../include/Event.h"
 #include "../include/Sprite.h"
+#include "../include/Object.h"
 
 
 using namespace std;
@@ -32,7 +33,8 @@ class Game : public Event
     private:
         bool            run;
         SDL_Surface*    surface;
-        Sprite*         player;
+        //Sprite*         player;
+        Object*         player;
 
 };
 

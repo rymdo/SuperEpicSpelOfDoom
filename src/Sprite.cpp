@@ -9,6 +9,8 @@ Sprite::Sprite(int X, int Y)
     src = NULL;
     posX = X;
     posY = Y;
+    FposX = (float)posX;
+    FposY = (float)posY;
 
     list.push_back(this); //Sparar instansen i statiska Sprite::list
 }
@@ -30,8 +32,20 @@ void Sprite::DrawAll(SDL_Surface* dest)
 {
     for(int i=0; i<list.size(); i++)
     {
+        list[i]->Update();
         list[i]->Draw(dest);
     }
+}
+
+void Sprite::setPos(int X, int Y)
+{
+    posX = X;
+    posY = Y;
+}
+
+void Sprite::Update()
+{
+
 }
 
 Sprite::~Sprite()
