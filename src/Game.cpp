@@ -12,8 +12,6 @@ using namespace std;
 Game::Game()
 {
     run             = true;
-    //surface         = NULL;
-    //surface_test    = NULL;
 }
 
 Game::~Game()
@@ -51,22 +49,24 @@ bool Game::Init()
         return false;
     }
     /*
-    if((surface_test = Surface::Load("files/background/lava.jpg")) == NULL)
+    if((surface_temp = Surface::Load("files/sprites/link/linkD1.gif")) == NULL)
     {
+
         return false;
-    }*/
+    }
+    */
 
     if (!Tile::loadAll())
         return false;
 
-    /*Sprite* tmpSprite = new Sprite(0, 0);
-    tmpSprite->Load("files/background/lava.jpg");*/
+    player = new Sprite(50, 50);
+    player->Load("files/sprites/link/linkD1.gif");
 
-    Sprite* link = new Sprite(100, 100);
-    link->Load("files/sprites/link/linkD1.gif");
+    //Sprite* link = new Sprite(100, 100);
+    //link->Load("files/sprites/link/linkD1.gif");
 
-    Sprite* link2 = new Sprite(200, 200);
-    link2->Load("files/sprites/link/linkD1.gif");
+    //Sprite* link2 = new Sprite(200, 200);
+    //link2->Load("files/sprites/link/linkD1.gif");
 
 
 
@@ -86,6 +86,16 @@ void Game::Exit()
     run = false;
 }
 
+void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
+{
+    int up, down, left, right;
+}
+
+void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
+{
+
+}
+
 void Game::Loop()
 {
 
@@ -93,7 +103,7 @@ void Game::Loop()
 
 void Game::Render()
 {
-    Surface::Draw(surface, surface_test, 0, 0);
+    //Surface::Draw(surface, surface_test, 0, 0);
     Sprite::DrawAll(surface);
 
     SDL_Flip(surface);
@@ -105,47 +115,3 @@ void Game::CleanUp()
     //SDL_FreeSurface(surface_test);
     SDL_Quit();
 }
-
-
-/*
-void Game::loop()
-{
-    bool run = true;
-    while (run)
-    {
-        // message processing loop
-        SDL_Event event;
-        while (SDL_PollEvent(&event))
-        {
-            // check for messages
-            switch (event.type)
-            {
-                // exit if the window is closed
-            case SDL_QUIT:
-                run = false;
-                break;
-
-                // check for keypresses
-            case SDL_KEYDOWN:
-                {
-                    // exit if ESCAPE is pressed
-                    if (event.key.keysym.sym == SDLK_ESCAPE)
-                        run = false;
-                    break;
-                }
-            } // end switch
-        } // end of message processing
-        SDL_Flip(screen);
-    }
-}
-
-
-bool Game::Event(SDL_Event* event)
-{
-    if(event->type == SDL_QUIT)
-    {
-        run = false;
-    }
-}
-*/
-

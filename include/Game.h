@@ -8,6 +8,8 @@
 
 #include "../include/Surface.h"
 #include "../include/Event.h"
+#include "../include/Sprite.h"
+
 
 using namespace std;
 
@@ -23,11 +25,14 @@ class Game : public Event
         void Render();
         void CleanUp();
         void Exit();
+        void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
+        void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
 
     protected:
     private:
         bool            run;
         SDL_Surface*    surface;
+        Sprite*         player;
 
 };
 
