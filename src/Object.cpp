@@ -13,6 +13,8 @@ Object::Object(int X, int Y, int Z, string file) : Sprite(X, Y, Z)
 {
     vec.x = 0;
     vec.y = 0;
+    PrevX = X;
+    PrevY = Y;
     Load(file);
 }
 
@@ -53,11 +55,15 @@ void Object::Move()
 /*instead of setmovement, maybe appendMovement could be used..
 That way one key won't override another. Then simply limit the total movement by
 normalize the vector and multiply it with a constant...*/
-void Object::SetMovement(float X, float Y)
+void Object::SetMovementX(float X)
 {
     vec.x = X;
+}
+void Object::SetMovementY(float Y)
+{
     vec.y = Y;
 }
+
 
 Object::~Object()
 {

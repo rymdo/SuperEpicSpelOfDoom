@@ -88,40 +88,34 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
     if(sym == SDLK_DOWN)
     {
-        player->SetMovement(0,2);
+        player->SetMovementY(0.5);
     }
     if(sym == SDLK_UP)
     {
-        player->SetMovement(0,-2);
+        player->SetMovementY(-0.5);
     }
     if(sym == SDLK_LEFT)
     {
-        player->SetMovement(-2,0);
+        player->SetMovementX(-0.5);
     }
     if(sym == SDLK_RIGHT)
     {
-        player->SetMovement(2,0);
+        player->SetMovementX(0.5);
     }
 }
 
 void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
-    if(sym == SDLK_DOWN)
+    if(sym == SDLK_DOWN || sym == SDLK_UP)
     {
-        player->SetMovement(0,0);
+        player->SetMovementY(0);
     }
-    if(sym == SDLK_UP)
+
+    if(sym == SDLK_LEFT || sym == SDLK_RIGHT)
     {
-        player->SetMovement(0,0);
+        player->SetMovementX(0);
     }
-    if(sym == SDLK_LEFT)
-    {
-        player->SetMovement(0,0);
-    }
-    if(sym == SDLK_RIGHT)
-    {
-        player->SetMovement(0,0);
-    }
+
 }
 
 void Game::Loop()
@@ -131,7 +125,7 @@ void Game::Loop()
     gameTime = now;
 
     Sprite::UpdateAll(timeElapsed);
-    SDL_Delay(30);
+    //SDL_Delay(30);
 }
 
 void Game::Render()

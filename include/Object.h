@@ -21,11 +21,13 @@ class Object : Sprite
         Object(int X=0, int Y=0, int Z=10, string file="files/sprites/link/linkD1.gif");
         virtual ~Object();
         void Update(Uint32 timeElapsed);
-        void SetMovement(float X, float Y);
+        void SetMovementX(float X);
+        void SetMovementY(float Y);
     protected:
         Vec vec;
     private:
         void Move();
+        int PrevX, PrevY;
 
 };
 
