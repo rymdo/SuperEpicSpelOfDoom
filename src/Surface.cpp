@@ -71,6 +71,35 @@ SDL_Surface* Surface::getLoaded(char* file)
 }
 
 //Ritar en surface på en annan...
+/*static*/ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, int src_x, int src_y, int src_w, int src_h)
+{
+    if(dest == NULL || src == NULL)
+    {
+        return false;
+    }
+
+    //kontrollerar att de sprites som skrivs ut ej ligger utanför skärmen
+    dest_x -= Surface::cam->getX();
+    dest_y -= Surface::cam->getY();
+
+    if(dest_x < 0 || dest_x>=Surface::cam->getW() || dest_y < 0 || dest_y >= Surface::cam->getH())
+        return false;
+
+    SDL_Rect destR, srcR;
+    destR.x = dest_x;
+    destR.y = dest_y;
+
+    srcR.x = src_x;
+    srcR.y = src_y;
+    srcR.w = src_w;
+    srcR.h = src_h;
+
+    SDL_BlitSurface(src, &srcR, dest, &destR);
+
+    return true;
+}
+
+//Ritar en surface på en annan...
 /*static*/ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int x, int y)
 {
     if(dest == NULL || src == NULL)

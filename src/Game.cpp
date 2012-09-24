@@ -60,8 +60,17 @@ bool Game::Init()
     and stored inside the player object...
     */
 
-    Sprite* link2 = new Sprite(100, 110, 10);
-    link2->Load("files/sprites/link/linkD1.gif");
+    Sprite* monk1 = new Sprite(32, 110, 10, 3, 32);
+    monk1->Load("files/sprites/monk/monk_stand_front.png");
+
+    Sprite* monk2 = new Sprite(64, 110, 10, 3, 32);
+    monk2->Load("files/sprites/monk/monk_stand_side.png");
+
+    Sprite* monk3 = new Sprite(96, 110, 10, 3, 32);
+    monk3->Load("files/sprites/monk/monk_stand_back.png");
+
+    Sprite* monk4 = new Sprite(128, 110, 10, 3, 32);
+    monk4->Load("files/sprites/monk/monk_walk_side.png");
 
     Camera* cam = new Camera();
     Surface::setCamera(cam);
@@ -70,8 +79,6 @@ bool Game::Init()
 
     return true;
 }
-
-
 
 bool Game::Event(SDL_Event* event)
 {
@@ -121,7 +128,7 @@ void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 void Game::Loop()
 {
     Uint32 now = SDL_GetTicks();
-    Uint32 timeElapsed = now - gameTime;
+    timeElapsed = now - gameTime;
     gameTime = now;
 
     Sprite::UpdateAll(timeElapsed);
@@ -131,7 +138,7 @@ void Game::Loop()
 void Game::Render()
 {
     //Surface::Draw(surface, surface_test, 0, 0);
-    Sprite::DrawAll(surface);
+    Sprite::DrawAll(surface, gameTime, timeElapsed);
 
     SDL_Flip(surface);
 }

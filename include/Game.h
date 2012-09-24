@@ -40,6 +40,7 @@ class Game : public Event
         //Sprite*         player;
         Object*         player;
         Uint32          gameTime;
+        Uint32          timeElapsed;
 
 };
 
