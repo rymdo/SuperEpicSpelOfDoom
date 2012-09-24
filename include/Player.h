@@ -14,7 +14,7 @@ class Player : public Object
         virtual ~Player();
         virtual void Load();
         virtual bool Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
-        virtual void Update(Uint32 timeElapsed);
+        virtual void Update(Uint32 gameTime, Uint32 timeElapsed);
     protected:
     private:
         Camera* cam;

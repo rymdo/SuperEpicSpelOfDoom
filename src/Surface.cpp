@@ -31,7 +31,7 @@ string Surface::getFilename()
 }
 
 //Söker i statiska Surface::list efter en surface med samma filnamn och returnerar dess surface i så fall
-SDL_Surface* Surface::getLoaded(char* file)
+SDL_Surface* Surface::GetLoaded(char* file)
 {
     for(int i=0; i<list.size(); i++)
     {
@@ -47,7 +47,7 @@ SDL_Surface* Surface::getLoaded(char* file)
 //Ladda ny bildfil och spara i en SDL_Surface, sparar ett relationsobjekt Surface, mellan SDL_Surface och filename
 /*static*/ SDL_Surface* Surface::Load(char* file)
 {
-    SDL_Surface* ret = getLoaded(file); //<-- getLoaded returnerar SDL_Surface* eller NULL
+    SDL_Surface* ret = GetLoaded(file); //<-- getLoaded returnerar SDL_Surface* eller NULL
 
     if (ret != NULL)
         return ret; //om getLoaded lyckades hämta en redan laddad bild

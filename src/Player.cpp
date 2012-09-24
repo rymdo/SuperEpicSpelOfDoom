@@ -20,7 +20,7 @@ void Player::Load()
     src = srcList[0];
 }
 
-void Player::Update(Uint32 timeElapsed)
+void Player::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
     Move();
     cam->setPosition(x, y);

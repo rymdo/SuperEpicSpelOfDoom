@@ -16,25 +16,25 @@ class Sprite
     public:
         Sprite(float X=0, float Y=0, int Z=0, int FPS = 0, int FrameHeight = 0);
         virtual ~Sprite();
+
         virtual void Load(string file);
         virtual bool Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
-        virtual void Update(Uint32 timeElapsed);
+        virtual void Update(Uint32 gameTime, Uint32 timeElapsed);
 
         static void DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
-        static void UpdateAll(Uint32 timeElapsed);
-
-        friend bool operator<(Sprite a, Sprite b);
-        static bool zSort(Sprite* a, Sprite* b);
+        static void UpdateAll(Uint32 gameTime, Uint32 timeElapsed);
 
         virtual float getHeight();
         virtual float getWidth();
+
+        friend bool operator<(Sprite a, Sprite b);
+        static bool zSort(Sprite* a, Sprite* b);
 
     protected:
         float x;
         float y;
         int z;
 
-        int fps;
         int frameHeight;
         int frameTime;
         int totalFrames;

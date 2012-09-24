@@ -17,7 +17,7 @@ Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y,
     PrevY = Y;
 }
 
-void Object::Update(Uint32 timeElapsed)
+void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
     Move();
 }

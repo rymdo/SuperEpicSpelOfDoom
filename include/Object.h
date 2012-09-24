@@ -18,7 +18,7 @@ class Object : public Sprite
     public:
         Object(float X=0, float Y=0, int Z=10, int FPS = 0, int FrameHeight = 0);
         virtual ~Object();
-        virtual void Update(Uint32 timeElapsed);
+        virtual void Update(Uint32 gameTime, Uint32 timeElapsed);
         void SetMovementX(float X);
         void SetMovementY(float Y);
     protected:

@@ -131,7 +131,7 @@ void Game::Loop()
     timeElapsed = now - gameTime;
     gameTime = now;
 
-    Sprite::UpdateAll(timeElapsed);
+    Sprite::UpdateAll(gameTime, timeElapsed);
     //SDL_Delay(30);
 }
 
