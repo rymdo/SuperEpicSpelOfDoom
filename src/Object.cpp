@@ -9,13 +9,12 @@
 
 using namespace std;
 
-Object::Object(int X, int Y, int Z, string file) : Sprite(X, Y, Z)
+Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
     vec.x = 0;
     vec.y = 0;
     PrevX = X;
     PrevY = Y;
-    Load(file);
 }
 
 void Object::Update(Uint32 timeElapsed)
@@ -29,9 +28,9 @@ void Object::Move()
     y += vec.y;
 
     /*Each call to Load goes through Surface::Load and generates an iteration through
-    ALL loaded images which is fairly uneffective... Load images when instanciating instead
+    ALL loaded images which is fairly uneffective... Load images when instansiating instead
     in a class which derives from Object, as agreed earlier called Player...*/
-    if(vec.x < 0.0)
+    /*if(vec.x < 0.0)
     {
         Load("files/sprites/link/linkR.gif");
     }
@@ -47,7 +46,7 @@ void Object::Move()
     else if( vec.y > 0.0)
     {
         Load("files/sprites/link/linkD1.gif");
-    }
+    }*/
 }
 
 /*instead of setmovement, maybe appendMovement could be used..
@@ -57,6 +56,7 @@ void Object::SetMovementX(float X)
 {
     vec.x = X;
 }
+
 void Object::SetMovementY(float Y)
 {
     vec.y = Y;

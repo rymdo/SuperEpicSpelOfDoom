@@ -31,13 +31,15 @@ void Sprite::Load(string file)
 {
     src = Surface::Load((char*)file.c_str());
 
-    if (frameHeight != 0)
+    if (frameHeight != 0 && src != NULL)
         totalFrames = (src->h/frameHeight);
 }
 
 //Ritar ut instansens src på dest via Surface::Draw
 bool Sprite::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
+    if (src == NULL) return false;
+
     if (frameHeight == 0)
         return Surface::Draw(dest, src, x, y);
 
@@ -83,15 +85,31 @@ void Sprite::UpdateAll(Uint32 timeElapsed)
 bool operator<(Sprite a, Sprite b)
 {
     if(a.z == b.z)
-        return (a.y < b.y);
+        return ((a.y+a.getHeight()) < (b.y+b.getHeight()));
 
-    return (a.z<b.z);
+    return (a.z < b.z);
 }
 
 void Sprite::setPos(int X, int Y)
 {
     x = (float)X;
     y = (float)Y;
+}
+
+float Sprite::getHeight()
+{
+    if (frameHeight != 0)
+        return (float)frameHeight;
+
+    if (src == NULL)
+        return 0;
+
+    return (float)src->h;
+}
+
+float Sprite::getWidth()
+{
+    return src->w;
 }
 
 Sprite::~Sprite()

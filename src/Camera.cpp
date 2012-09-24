@@ -6,20 +6,20 @@ int Camera::width = 640;
 int Camera::height = 480;
 
 //constructor
-Camera::Camera(int posX, int posY)
+Camera::Camera(int X, int Y)
 {
-    X=posX;
-    Y=posY;
+    x = X;
+    y = Y;
 }
 
 int Camera::getX()
 {
-    return X;
+    return x;
 }
 
 int Camera::getY()
 {
-    return Y;
+    return y;
 }
 
 int Camera::getH()
@@ -33,9 +33,10 @@ int Camera::getW()
 }
 
 //ska kallas på med koordinater x och y från player, som blir kamerans fokus
-void Camera::setPosition()
+void Camera::setPosition(int X, int Y)
 {
-
+    x = X-width/2;
+    y = Y-height/2;
 }
 
 Camera::~Camera()

@@ -12,17 +12,17 @@ using namespace std;
 class Camera
 {
     public:
-        Camera(int posX = 0, int posY = 0);
+        Camera(int X = 0, int Y = 0);
         virtual ~Camera();
         int getX();
         int getY();
         int getH();
         int getW();
 
-        void setPosition();
+        void setPosition(int x, int y);
     private:
-        int X;
-        int Y;
+        int x;
+        int y;
         static int height;
         static int width;
 };

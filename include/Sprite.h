@@ -14,15 +14,20 @@ using namespace std;
 class Sprite
 {
     public:
-        Sprite(float X=0, float Y=0, int Z=0, int fps = 0, int frameHeight = 0);
+        Sprite(float X=0, float Y=0, int Z=0, int FPS = 0, int FrameHeight = 0);
         virtual ~Sprite();
         virtual void Load(string file);
         virtual bool Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
+        virtual void Update(Uint32 timeElapsed);
+
         static void DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
         static void UpdateAll(Uint32 timeElapsed);
 
         friend bool operator<(Sprite a, Sprite b);
         static bool zSort(Sprite* a, Sprite* b);
+
+        virtual float getHeight();
+        virtual float getWidth();
 
     protected:
         float x;
@@ -34,11 +39,11 @@ class Sprite
         int frameTime;
         int totalFrames;
 
+        SDL_Surface* src;
+
         void setPos(int X, int Y);
-        virtual void Update(Uint32 timeElapsed);
 
     private:
-        SDL_Surface* src;
         static vector<Sprite*> list; //lista för alla sprites
 };
 

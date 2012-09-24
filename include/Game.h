@@ -14,6 +14,7 @@
 #include "../include/Tile.h"
 
 #include "../include/Object.h"
+#include "../include/Player.h"
 
 
 using namespace std;
@@ -38,7 +39,7 @@ class Game : public Event
         bool            run;
         SDL_Surface*    surface;
         //Sprite*         player;
-        Object*         player;
+        Player*         player;
         Uint32          gameTime;
         Uint32          timeElapsed;
 

@@ -49,11 +49,14 @@ bool Game::Init()
     }
     */
 
+    Camera* cam = new Camera();
+    Surface::setCamera(cam);
+
     if (!Tile::loadAll())
         return false;
 
-    player = new Object(150, 50, 10, "files/sprites/link/linkD1.gif");
-    //player->Load("files/sprites/link/linkD1.gif");
+    player = new Player(cam, 300, 300, 20);
+    player->Load();
     /*a call to player->Load() would be better. Where you dont define pahts to the files,
     but the paths are stored in the code in the player class which derives from Object...
     Then in the Load function for Player, all de needed surfaces are loaded via Surface::Load
@@ -71,9 +74,6 @@ bool Game::Init()
 
     Sprite* monk4 = new Sprite(128, 110, 10, 3, 32);
     monk4->Load("files/sprites/monk/monk_walk_side.png");
-
-    Camera* cam = new Camera();
-    Surface::setCamera(cam);
 
     gameTime = 0;
 

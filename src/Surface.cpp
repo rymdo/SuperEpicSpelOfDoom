@@ -82,7 +82,7 @@ SDL_Surface* Surface::getLoaded(char* file)
     dest_x -= Surface::cam->getX();
     dest_y -= Surface::cam->getY();
 
-    if(dest_x < 0 || dest_x>=Surface::cam->getW() || dest_y < 0 || dest_y >= Surface::cam->getH())
+    if(dest_x < -(src->w) || dest_x>=Surface::cam->getW() || dest_y < -src->h || dest_y >= Surface::cam->getH())
         return false;
 
     SDL_Rect destR, srcR;
@@ -111,7 +111,7 @@ SDL_Surface* Surface::getLoaded(char* file)
     x -= Surface::cam->getX();
     y -= Surface::cam->getY();
 
-    if(x < 0 || x>=Surface::cam->getW() || y < 0 || y >= Surface::cam->getH())
+    if(x < -(src->w) || x>=Surface::cam->getW() || y < -(src->h) || y >= Surface::cam->getH())
         return false;
 
     SDL_Rect destR;
