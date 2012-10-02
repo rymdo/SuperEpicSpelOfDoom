@@ -75,6 +75,9 @@ bool Game::Init()
     Sprite* monk4 = new Sprite(128, 110, 10, 3, 32);
     monk4->Load("files/sprites/monk/monk_walk_side.png");
 
+    Object* testObj = new Object(200, 300, 10, 3, 32);
+    testObj->Load("files/sprites/monk/monk_walk_side.png");
+
     gameTime = 0;
 
     return true;

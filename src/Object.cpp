@@ -11,10 +11,10 @@ using namespace std;
 
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
-    vec.x = 0;
-    vec.y = 0;
+
     PrevX = X;
     PrevY = Y;
+    isCollidable = true;
 }
 
 void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
@@ -62,6 +62,10 @@ void Object::SetMovementY(float Y)
     vec.y = Y;
 }
 
+Vec Object::getVec()
+{
+    return vec;
+}
 
 Object::~Object()
 {

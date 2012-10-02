@@ -52,6 +52,9 @@
 		<Unit filename="include\Sprite.h" />
 		<Unit filename="include\Surface.h" />
 		<Unit filename="include\Tile.h" />
+		<Unit filename="include\Vec.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="src\Camera.cpp" />
 		<Unit filename="src\Event.cpp" />

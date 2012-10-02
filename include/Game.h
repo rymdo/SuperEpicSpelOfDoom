@@ -38,7 +38,6 @@ class Game : public Event
     private:
         bool            run;
         SDL_Surface*    surface;
-        //Sprite*         player;
         Player*         player;
         Uint32          gameTime;
         Uint32          timeElapsed;
