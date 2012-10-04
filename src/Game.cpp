@@ -138,7 +138,6 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
 
     if(sym == SDLK_m)
-    {
         mainMenu->SetState();
 
     if(sym == SDLK_SPACE)
