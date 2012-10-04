@@ -49,12 +49,7 @@ bool Game::Init()
         cout << "oops TTF_Init fail...";
     }
 
-    arial_test = TTF_OpenFont("files/fonts/arial.ttf", 12);
-
-    if (arial_test==NULL)
-    {
-        cout << "oops TTF_Init fail...";
-    }
+    Font::Load();
 
     player = NULL;
 
@@ -212,7 +207,8 @@ bool Game::SaveGame()
     savefile << player->getPosX() << " " << player->getPosY();
 
     savefile.close();
-    //fixa savea kanelbullar.
+
+    return true;
 }
 
 bool Game::LoadGame()
@@ -258,7 +254,7 @@ void Game::Render()
     }
     else
     {
-        mainMenu->Draw(surface, arial_test);
+        mainMenu->Draw(surface);
         /*Surface::Draw(surface, text_render_test, 100, 100);
         text_render_test = TTF_RenderText_Solid(arial_test, "HELLO WORLD!", color_test);*/
     }

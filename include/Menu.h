@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "../include/Surface.h"
+#include "../include/Font.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ class Menu
         Menu();
         virtual ~Menu();
         void UpdateMenu();
-        bool Draw(SDL_Surface* surface, TTF_Font* arial_test);
+        bool Draw(SDL_Surface* surface);
         bool Active();
         bool SetState();
         void next();

@@ -17,6 +17,7 @@
 
 #include "../include/Object.h"
 #include "../include/Player.h"
+#include "../include/Font.h"
 
 
 using namespace std;
@@ -41,7 +42,6 @@ class Game : public Event
 
         void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
         void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
-        TTF_Font* arial_test;
 
     protected:
     private:

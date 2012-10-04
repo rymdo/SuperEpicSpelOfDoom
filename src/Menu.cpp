@@ -28,7 +28,7 @@ bool Menu::SetState()
     return inMenu;
 }
 
-bool Menu::Draw(SDL_Surface* surface, TTF_Font* arial_test)
+bool Menu::Draw(SDL_Surface* surface)
 {
     SDL_FillRect(surface, NULL, 0x000000);
 
@@ -46,7 +46,7 @@ bool Menu::Draw(SDL_Surface* surface, TTF_Font* arial_test)
             color = RED;
         }
 
-        renderdText = TTF_RenderText_Solid(arial_test, menuItems[i].c_str(), color);
+        renderdText = TTF_RenderText_Solid(Font::BITLIM, menuItems[i].c_str(), color);
 
         Surface::DrawStatic(surface, renderdText, x-renderdText->w/2, y);
 

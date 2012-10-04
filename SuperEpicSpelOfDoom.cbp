@@ -46,6 +46,7 @@
 		</Linker>
 		<Unit filename="include\Camera.h" />
 		<Unit filename="include\Event.h" />
+		<Unit filename="include\Font.h" />
 		<Unit filename="include\Game.h" />
 		<Unit filename="include\Menu.h" />
 		<Unit filename="include\Object.h" />
@@ -59,6 +60,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src\Camera.cpp" />
 		<Unit filename="src\Event.cpp" />
+		<Unit filename="src\Font.cpp" />
 		<Unit filename="src\Game.cpp" />
 		<Unit filename="src\Menu.cpp" />
 		<Unit filename="src\Object.cpp" />
