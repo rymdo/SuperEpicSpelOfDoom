@@ -37,6 +37,7 @@ class Sprite
 
         friend bool operator<(Sprite a, Sprite b);
         static bool zSort(Sprite* a, Sprite* b);
+        void setPos(float X, float Y);
 
     protected:
         float x;
@@ -50,7 +51,6 @@ class Sprite
         SDL_Surface* src;
 
         bool isCollidable;
-        void setPos(int X, int Y);
 
 
     private:

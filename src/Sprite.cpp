@@ -164,7 +164,7 @@ bool operator<(Sprite a, Sprite b)
     return (a.z < b.z);
 }
 
-void Sprite::setPos(int X, int Y)
+void Sprite::setPos(float X, float Y)
 {
     x = (float)X;
     y = (float)Y;
