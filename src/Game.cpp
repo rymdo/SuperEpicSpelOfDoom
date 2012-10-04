@@ -56,30 +56,7 @@ bool Game::Init()
         cout << "oops TTF_Init fail...";
     }
 
-    Camera* cam = new Camera();
-    Surface::setCamera(cam);
-
-    if (!Tile::loadAll())
-        return false;
-
-    player = new Player(cam, 500, 500, 20);
-    player->Load();
-    /*a call to player->Load() would be better. Where you dont define pahts to the files,
-    but the paths are stored in the code in the player class which derives from Object...
-    Then in the Load function for Player, all de needed surfaces are loaded via Surface::Load
-    and stored inside the player object...
-    */
-
-    Sprite* monk1 = new Sprite(32, 110, 10, 3, 32);
-    monk1->Load("files/sprites/monk/monk_stand_front.png");
-
-    Sprite* monk3 = new Sprite(96, 110, 10, 3, 32);
-    monk3->Load("files/sprites/monk/monk_stand_back.png");
-
-    Object* poke = new Object(600, 700, 10, 1, 100);
-    poke->Load("files/sprites/poke.png");
-
-    gameTime = 0;
+    player = NULL;
 
     return true;
 }
@@ -109,11 +86,28 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         }
         if(sym == SDLK_SPACE || sym == SDLK_RETURN)
         {
-            mainMenu->select();
+            string s = mainMenu->select();
+
+            if (s == "New Game")
+                NewGame();
+
+            if (s == "Load")
+                LoadGame();
+
+            if (s == "Save")
+                SaveGame();
+
+            if (s == "Exit")
+                Exit();
         }
 
         return;
     }
+
+    if(sym == SDLK_m)
+        mainMenu->SetState();
+
+    if (player == NULL) return;
 
     if(sym == SDLK_DOWN)
     {
@@ -132,10 +126,6 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         player->SetMovementX(0.5);
     }
 
-
-    if(sym == SDLK_m)
-        mainMenu->SetState();
-
     if(sym == SDLK_SPACE)
     {
         cout << "Player x: " << player->getPosX() << " y: " << player->getPosY() << endl;
@@ -148,6 +138,7 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
 void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
+    if (player == NULL) return;
     if(sym == SDLK_DOWN || sym == SDLK_UP)
     {
         player->SetMovementY(0);
@@ -157,6 +148,40 @@ void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
         player->SetMovementX(0);
     }
+
+}
+
+bool Game::NewGame()
+{
+    Camera* cam = new Camera();
+    Surface::setCamera(cam);
+
+    if (!Tile::loadAll())
+        return false;
+
+    player = new Player(cam, 500, 500, 20);
+    player->Load();
+
+    Sprite* monk1 = new Sprite(32, 110, 10, 3, 32);
+    monk1->Load("files/sprites/monk/monk_stand_front.png");
+
+    Sprite* monk3 = new Sprite(96, 110, 10, 3, 32);
+    monk3->Load("files/sprites/monk/monk_stand_back.png");
+
+    Object* poke = new Object(600, 700, 10, 1, 100);
+    poke->Load("files/sprites/poke.png");
+
+    gameTime = 0;
+    mainMenu->SetState();
+}
+
+bool Game::SaveGame()
+{
+
+}
+
+bool Game::LoadGame()
+{
 
 }
 

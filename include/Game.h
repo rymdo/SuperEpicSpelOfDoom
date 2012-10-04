@@ -33,6 +33,12 @@ class Game : public Event
         void Render();
         void CleanUp();
         void Exit();
+
+        bool NewGame();
+        bool SaveGame();
+        bool LoadGame();
+        void ExitGame();
+
         void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
         void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
         TTF_Font* arial_test;

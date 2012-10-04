@@ -19,17 +19,13 @@ class Menu
     public:
         Menu();
         virtual ~Menu();
-        bool SaveGame();
-        bool LoadGame();
-        void ExitGame();
-        void NewGame();
         void UpdateMenu();
         bool Draw(SDL_Surface* surface, TTF_Font* arial_test);
         bool Active();
         bool SetState();
         void next();
         void previous();
-        void select();
+        string select();
     protected:
     private:
         SDL_Surface* renderdText;

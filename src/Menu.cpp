@@ -53,27 +53,10 @@ bool Menu::Draw(SDL_Surface* surface, TTF_Font* arial_test)
         y+=80;
     }
 }
-bool Menu::SaveGame()
-{
-
-}
-bool Menu::LoadGame()
-{
-
-}
-void Menu::ExitGame()
-{
-
-}
 
 void Menu::UpdateMenu()
 {
 
-}
-
-void Menu::NewGame()
-{
-    inMenu=false;
 }
 
 void Menu::next()
@@ -96,22 +79,13 @@ void Menu::previous()
     activeItem--;
 }
 
-void Menu::select()
+string Menu::select()
 {
-    string s = menuItems[activeItem];
-
-    if (s == "New Game")
-        Menu::NewGame();
-
-    if (s == "Load")
-        Menu::LoadGame();
-
-    if (s == "Save")
-        Menu::SaveGame();
-
-    if (s == "Exit")
-        Menu::ExitGame();
-
-    if (s == "Resume")
+    if (menuItems[activeItem] == "Resume")
+    {
         inMenu=false;
+        return "";
+    }
+
+    return menuItems[activeItem];
 }
