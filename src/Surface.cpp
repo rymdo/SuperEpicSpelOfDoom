@@ -15,7 +15,13 @@ Surface::Surface(string file, SDL_Surface* surf)
 
 Surface::~Surface()
 {
-    //dtor
+    SDL_FreeSurface(surface);
+}
+
+
+/*static*/ void Surface::Cleanup()
+{
+    Surface::list.clear();
 }
 
 //returnerar laddad surface för instans
