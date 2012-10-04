@@ -177,12 +177,41 @@ bool Game::NewGame()
 
 bool Game::SaveGame()
 {
+    ofstream savefile;
+    savefile.open("save.txt");
 
+    /*if(!savefile.is_open())
+    {
+        cout << "Error occurred while saving";
+        return;
+    }
+
+    cout << "Saved Successfully!";*/
+
+    if(player==NULL)
+    {
+        cout << "There is no game to save!";
+        return false;
+    }
+
+    savefile << player->getPosX() << " " << player->getPosY();
+
+    savefile.close();
+    //fixa savea kanelbullar.
 }
 
 bool Game::LoadGame()
 {
-
+    float x;
+    float y;
+    ifstream loadfile;
+    loadfile.open("save.txt");
+    loadfile >> x >> y;
+    if(player == NULL) return false;
+    player->setPos(x,y);
+    loadfile.close();
+    mainMenu->SetState();
+    //fixa kanelbullar, urladdning, att man kan loada ett spel direkt
 }
 
 void Game::Loop()

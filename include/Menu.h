@@ -6,6 +6,7 @@
 #include <SDL/SDL_ttf.h>
 
 #include <iostream>
+#include <ostream>
 #include <fstream>
 #include <string>
 #include <vector>
