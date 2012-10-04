@@ -72,6 +72,12 @@ void Sprite::Update(Uint32 gameTime, Uint32 timeElapsed)
     }
 }
 
+//Ritar ut alla instanser i Sprite::list
+/*static*/ void Sprite::Cleanup()
+{
+    list.clear();
+}
+
 void Sprite::UpdateAll(Uint32 gameTime, Uint32 timeElapsed)
 {
     for(int i=0; i<list.size(); i++)

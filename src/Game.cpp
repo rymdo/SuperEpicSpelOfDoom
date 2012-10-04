@@ -80,19 +80,33 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         {
             mainMenu->next();
         }
+
         if(sym == SDLK_UP)
         {
             mainMenu->previous();
         }
+
+        if(sym == SDLK_m || sym == SDLK_ESCAPE)
+        {
+            if(player != NULL)
+                mainMenu->SetState();
+        }
+
         if(sym == SDLK_SPACE || sym == SDLK_RETURN)
         {
             string s = mainMenu->select();
 
             if (s == "New Game")
-                NewGame();
+            {
+                if (NewGame())
+                    mainMenu->SetState();
+            }
 
             if (s == "Load")
-                LoadGame();
+            {
+                if (LoadGame())
+                    mainMenu->SetState();
+            }
 
             if (s == "Save")
                 SaveGame();
@@ -104,7 +118,7 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         return;
     }
 
-    if(sym == SDLK_m)
+    if(sym == SDLK_m || sym == SDLK_ESCAPE)
         mainMenu->SetState();
 
     if (player == NULL) return;
@@ -172,7 +186,6 @@ bool Game::NewGame()
     poke->Load("files/sprites/poke.png");
 
     gameTime = 0;
-    mainMenu->SetState();
 
     return true;
 }
@@ -204,16 +217,21 @@ bool Game::SaveGame()
 
 bool Game::LoadGame()
 {
+    Sprite::Cleanup();
+    if (!NewGame())
+        return false;
+
     float x;
     float y;
     ifstream loadfile;
     loadfile.open("save.txt");
     loadfile >> x >> y;
-    if(player == NULL) return false;
+
+    //if(player == NULL) return false;
     player->setPos(x,y);
     loadfile.close();
-    mainMenu->SetState();
     //fixa kanelbullar, urladdning, att man kan loada ett spel direkt
+    return true;
 }
 
 void Game::Loop()
