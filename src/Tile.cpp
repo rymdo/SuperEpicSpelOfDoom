@@ -27,6 +27,8 @@ bool Tile::loadAll()
         {
             c=in.get();
 
+            if(c==' ') continue;
+
             if(c=='\n')
             {
                 row++; //correct

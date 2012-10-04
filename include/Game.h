@@ -3,13 +3,15 @@
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
+#include <SDL/SDL_ttf.h>
+
 #include <iostream>
 #include <fstream>
 
 #include "../include/Surface.h"
 #include "../include/Event.h"
 #include "../include/Sprite.h"
-
+#include "../include/Menu.h"
 #include "../include/Camera.h"
 #include "../include/Tile.h"
 
@@ -33,6 +35,7 @@ class Game : public Event
         void Exit();
         void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
         void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
+        TTF_Font* arial_test;
 
     protected:
     private:
@@ -41,9 +44,8 @@ class Game : public Event
         Player*         player;
         Uint32          gameTime;
         Uint32          timeElapsed;
+        Menu*           mainMenu;
 
 };
-
-
 
 #endif // GAME_H

@@ -123,6 +123,23 @@ SDL_Surface* Surface::GetLoaded(char* file)
     return true;
 }
 
+//Ritar en surface på en annan...
+/*static*/ bool Surface::DrawStatic(SDL_Surface* dest, SDL_Surface* src, int x, int y)
+{
+    if(dest == NULL || src == NULL)
+    {
+        return false;
+    }
+
+    SDL_Rect destR;
+    destR.x = x;
+    destR.y = y;
+
+    SDL_BlitSurface(src, NULL, dest, &destR);
+
+    return true;
+}
+
     void Surface::setCamera(Camera* a)
     {
         Surface::cam = a;
