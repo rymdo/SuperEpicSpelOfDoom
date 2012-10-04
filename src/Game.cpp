@@ -80,6 +80,9 @@ bool Game::Init()
     Object* testObj = new Object(200, 300, 10, 3, 32);
     testObj->Load("files/sprites/monk/monk_walk_side.png");
 
+    Object* poke = new Object(600, 700, 10, 1, 100);
+    poke->Load("files/sprites/poke.png");
+
     gameTime = 0;
 
     return true;
@@ -132,9 +135,19 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
         player->SetMovementX(0.5);
     }
+
+
     if(sym == SDLK_m)
     {
         mainMenu->SetState();
+
+    if(sym == SDLK_SPACE)
+    {
+        cout << "Player x: " << player->getPosX() << " y: " << player->getPosY() << endl;
+
+        Object* testObj = new Object(player->getPosX(), player->getPosY()+50, 10, 3, 50);
+        testObj->Load("files/sprites/cinnamonbun.png");
+
     }
 }
 
