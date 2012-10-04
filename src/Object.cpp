@@ -11,7 +11,6 @@ using namespace std;
 
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
-
     PrevX = X;
     PrevY = Y;
     isCollidable = true;
@@ -19,11 +18,15 @@ Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y,
 
 void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
-    Move();
+    Move(timeElapsed);
 }
 
-void Object::Move()
+void Object::Move(Uint32 timeElapsed)
 {
+    vec.Normalize();
+    float currentMovement = timeElapsed * (PPS/1000.0);
+    vec = vec * currentMovement;
+
     x += vec.x;
     y += vec.y;
 

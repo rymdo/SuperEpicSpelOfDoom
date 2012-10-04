@@ -16,9 +16,11 @@ class Object : public Sprite
         void SetMovementX(float X);
         void SetMovementY(float Y);
         Vec getVec();
-    protected:
 
-        void Move();
+    protected:
+        void Move(Uint32 timeElapsed);
+        float PPS; // Pixels Per Second
+
     private:
         int PrevX, PrevY;
 

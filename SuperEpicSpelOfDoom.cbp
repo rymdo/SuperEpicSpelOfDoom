@@ -66,6 +66,7 @@
 		<Unit filename="src\Sprite.cpp" />
 		<Unit filename="src\Surface.cpp" />
 		<Unit filename="src\Tile.cpp" />
+		<Unit filename="src\Vec.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

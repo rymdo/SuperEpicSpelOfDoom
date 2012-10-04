@@ -28,6 +28,7 @@ void Game::Execute()
         Loop();
         Render();
     }
+
     CleanUp();
 }
 
@@ -55,15 +56,13 @@ bool Game::Init()
         cout << "oops TTF_Init fail...";
     }
 
-
-
     Camera* cam = new Camera();
     Surface::setCamera(cam);
 
     if (!Tile::loadAll())
         return false;
 
-    player = new Player(cam, 300, 300, 20);
+    player = new Player(cam, 500, 500, 20);
     player->Load();
     /*a call to player->Load() would be better. Where you dont define pahts to the files,
     but the paths are stored in the code in the player class which derives from Object...
@@ -76,9 +75,6 @@ bool Game::Init()
 
     Sprite* monk3 = new Sprite(96, 110, 10, 3, 32);
     monk3->Load("files/sprites/monk/monk_stand_back.png");
-
-    Object* testObj = new Object(200, 300, 10, 3, 32);
-    testObj->Load("files/sprites/monk/monk_walk_side.png");
 
     Object* poke = new Object(600, 700, 10, 1, 100);
     poke->Load("files/sprites/poke.png");

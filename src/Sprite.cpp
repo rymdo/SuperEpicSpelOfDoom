@@ -180,6 +180,9 @@ float Sprite::getHeight()
 
 float Sprite::getWidth()
 {
+    if(src == NULL)
+        return 0;
+
     return src->w;
 }
 

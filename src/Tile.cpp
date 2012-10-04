@@ -22,12 +22,10 @@ bool Tile::loadAll()
 
     if(in.is_open())
     {
-        cout << "file is open";
+        //cout << "file is open";
         do
         {
             c=in.get();
-
-            if(c==' ') continue;
 
             if(c=='\n')
             {
@@ -35,6 +33,8 @@ bool Tile::loadAll()
                 column = 0;
                 continue;
             }
+
+            if(!isalnum(c)) continue;
 
             string cStr(1, c);
 

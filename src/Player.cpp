@@ -18,11 +18,12 @@ void Player::Load()
     srcList.push_back(Surface::Load((char*)standLeft.c_str())); //2 BACK
 
     src = srcList[0];
+    PPS = 200;
 }
 
 void Player::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
-    Move();
+    Move(timeElapsed);
     cam->setPosition(x, y);
 }
 
