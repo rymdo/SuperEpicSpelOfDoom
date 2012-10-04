@@ -173,6 +173,8 @@ bool Game::NewGame()
 
     gameTime = 0;
     mainMenu->SetState();
+
+    return true;
 }
 
 bool Game::SaveGame()

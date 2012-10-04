@@ -10,6 +10,7 @@ struct Vec
 {
     float x,y;
 
+    float Abs();
     void Normalize();
     Vec operator*= (float f);
 };

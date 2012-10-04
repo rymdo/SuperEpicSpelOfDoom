@@ -24,13 +24,16 @@ void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
 void Object::Move(Uint32 timeElapsed)
 {
     vec.Normalize();
+
+    if(vec.Abs() != 0)
+        lastVec = vec;
+
     float currentMovement = timeElapsed * (PPS/1000.0);
     //vec = vec * currentMovement;
     vec *= currentMovement;
 
     x += vec.x;
     y += vec.y;
-
     /*Each call to Load goes through Surface::Load and generates an iteration through
     ALL loaded images which is fairly uneffective... Load images when instansiating instead
     in a class which derives from Object, as agreed earlier called Player...*/

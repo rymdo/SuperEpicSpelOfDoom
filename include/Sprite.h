@@ -28,6 +28,7 @@ class Sprite
         static void DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
         static void UpdateAll(Uint32 gameTime, Uint32 timeElapsed);
 
+        void setFPS(int FPS);
         virtual int getPosX();
         virtual int getPosY();
         virtual float getHeight();

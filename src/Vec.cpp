@@ -12,6 +12,13 @@ void Vec::Normalize()
     y *= k;
 }
 
+float Vec::Abs()
+{
+    if(x == 0 && y == 0) return 0;
+
+    return sqrt(pow(x, 2) + pow(y, 2));
+}
+
 Vec operator* (int i, Vec v) { return v*i; }
 Vec operator* (Vec v, int i)
 {

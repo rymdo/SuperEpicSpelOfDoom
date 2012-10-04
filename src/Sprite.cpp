@@ -10,19 +10,25 @@ Sprite::Sprite(float X, float Y, int Z, int FPS, int FrameHeight)
     x = X;
     y = Y;
     z = Z;
+
     isCollidable = false;
     vec.x = 0;
     vec.y = 0;
 
-    if (FPS != 0)
-        frameTime = 1000/FPS;
-    else
-        frameTime = 1;
+    this->setFPS(FPS);
     frameHeight = FrameHeight;
 
     totalFrames = 1;
 
     list.push_back(this); //Sparar instansen i statiska Sprite::list
+}
+
+void Sprite::setFPS(int FPS)
+{
+    frameTime = 1;
+
+    if (FPS != 0)
+        frameTime = 1000/FPS;
 }
 
 //Laddar sprite till src via Surface::Load
@@ -53,9 +59,6 @@ void Sprite::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
 
 }
-
-
-
 
 //Ritar ut alla instanser i Sprite::list
 /*static*/ void Sprite::DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
