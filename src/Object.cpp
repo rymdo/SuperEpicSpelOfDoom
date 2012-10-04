@@ -25,7 +25,8 @@ void Object::Move(Uint32 timeElapsed)
 {
     vec.Normalize();
     float currentMovement = timeElapsed * (PPS/1000.0);
-    vec = vec * currentMovement;
+    //vec = vec * currentMovement;
+    vec *= currentMovement;
 
     x += vec.x;
     y += vec.y;

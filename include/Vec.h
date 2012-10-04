@@ -11,6 +11,7 @@ struct Vec
     float x,y;
 
     void Normalize();
+    Vec operator*= (float f);
 };
 
 Vec operator* (Vec v, int i);

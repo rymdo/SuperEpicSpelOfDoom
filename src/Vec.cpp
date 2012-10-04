@@ -27,3 +27,9 @@ Vec operator* (Vec v, float f)
     v.y *= f;
     return (v);
 }
+
+Vec Vec::operator*=(float f)
+{
+    x *= f;
+    y *= f;
+}
