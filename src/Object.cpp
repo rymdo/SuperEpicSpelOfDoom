@@ -74,6 +74,16 @@ Vec Object::getVec()
     return vec;
 }
 
+Vec Object::getLastVec()
+{
+    return lastVec;
+}
+
+void Object::setLastVec(Vec v)
+{
+    lastVec=v;
+}
+
 Object::~Object()
 {
     //dtor

@@ -194,21 +194,15 @@ bool Game::SaveGame()
     ofstream savefile;
     savefile.open("save.txt");
 
-    /*if(!savefile.is_open())
-    {
-        cout << "Error occurred while saving";
-        return;
-    }
-
-    cout << "Saved Successfully!";*/
-
     if(player==NULL)
     {
         cout << "There is no game to save!";
         return false;
     }
 
-    savefile << player->getPosX() << " " << player->getPosY();
+    Vec v = player->getLastVec();
+
+    savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y;
 
     savefile.close();
 
@@ -218,18 +212,26 @@ bool Game::SaveGame()
 bool Game::LoadGame()
 {
     Sprite::Cleanup();
+    Surface::Cleanup();
+
     if (!NewGame())
         return false;
 
     float x;
     float y;
+    float a;
+    float b;
+    Vec v;
     ifstream loadfile;
     loadfile.open("save.txt");
-    loadfile >> x >> y;
+    loadfile >> x >> y >> a >> b;
 
     //if(player == NULL) return false;
     player->setPos(x,y);
     loadfile.close();
+    v.x=a;
+    v.y=b;
+    player->setLastVec(v);
     //fixa kanelbullar, urladdning, att man kan loada ett spel direkt
     return true;
 }
@@ -269,7 +271,9 @@ void Game::Render()
 void Game::CleanUp()
 {
     SDL_FreeSurface(surface);
-    //SDL_FreeSurface(surface_test);
+    Sprite::Cleanup();
+    Surface::Cleanup();
+
     TTF_Quit();
     SDL_Quit();
 }

@@ -16,6 +16,8 @@ class Object : public Sprite
         void SetMovementX(float X);
         void SetMovementY(float Y);
         Vec getVec();
+        Vec getLastVec();
+        void setLastVec(Vec v);
     protected:
         void Move(Uint32 timeElapsed);
         float PPS; // Pixels Per Second
