@@ -121,18 +121,22 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     if(sym == SDLK_DOWN)
     {
         player->SetMovementY(0.5);
+        player->SetMovementX(0);
     }
     if(sym == SDLK_UP)
     {
         player->SetMovementY(-0.5);
+        player->SetMovementX(0);
     }
     if(sym == SDLK_LEFT)
     {
         player->SetMovementX(-0.5);
+        player->SetMovementY(0);
     }
     if(sym == SDLK_RIGHT)
     {
         player->SetMovementX(0.5);
+        player->SetMovementY(0);
     }
 
     if(sym == SDLK_SPACE)
@@ -208,6 +212,8 @@ bool Game::SaveGame()
 bool Game::LoadGame()
 {
     Sprite::Cleanup();
+    Surface::Cleanup();
+
     if (!NewGame())
         return false;
 
@@ -265,7 +271,9 @@ void Game::Render()
 void Game::CleanUp()
 {
     SDL_FreeSurface(surface);
-    //SDL_FreeSurface(surface_test);
+    Sprite::Cleanup();
+    Surface::Cleanup();
+
     TTF_Quit();
     SDL_Quit();
 }

@@ -20,6 +20,7 @@ class Surface
         string getFilename();
 
         static SDL_Surface* Load(char* file);
+        static void Cleanup();
         static bool DrawStatic(SDL_Surface* dest, SDL_Surface* src, int x, int y);
         static bool Draw(SDL_Surface* dest, SDL_Surface* src, int x, int y);
         static bool Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, int src_x, int src_y, int src_w, int src_h);
