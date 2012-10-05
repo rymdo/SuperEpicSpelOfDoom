@@ -21,7 +21,6 @@ class Menu
     public:
         Menu();
         virtual ~Menu();
-        void UpdateMenu();
         bool Draw(SDL_Surface* surface);
         bool Active();
         bool SetState();

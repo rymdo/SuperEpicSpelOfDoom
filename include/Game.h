@@ -14,7 +14,7 @@
 #include "../include/Menu.h"
 #include "../include/Camera.h"
 #include "../include/Tile.h"
-
+#include "../include/Popup.h"
 #include "../include/Object.h"
 #include "../include/Player.h"
 #include "../include/Font.h"
@@ -48,9 +48,11 @@ class Game : public Event
         bool            run;
         SDL_Surface*    surface;
         Player*         player;
+        Uint32          runTime;
         Uint32          gameTime;
         Uint32          timeElapsed;
         Menu*           mainMenu;
+        Popup*          popUp;
 
 };
 

@@ -52,6 +52,9 @@ bool Game::Init()
     Font::Load();
 
     player = NULL;
+    runTime = 0;
+    gameTime = 0;
+    timeElapsed = 0;
 
     return true;
 }
@@ -196,13 +199,14 @@ bool Game::SaveGame()
 
     if(player==NULL)
     {
-        cout << "There is no game to save!";
+        popUp=new Popup("There is no game to save!", runTime);
         return false;
     }
 
     Vec v = player->getLastVec();
 
     savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y;
+    popUp=new Popup("Game saved successfully!", runTime);
 
     savefile.close();
 
@@ -238,6 +242,7 @@ bool Game::LoadGame()
 
 void Game::Loop()
 {
+    runTime = SDL_GetTicks();
     if(!mainMenu->Active())
     {
         Uint32 now = SDL_GetTicks();
@@ -264,7 +269,7 @@ void Game::Render()
         /*Surface::Draw(surface, text_render_test, 100, 100);
         text_render_test = TTF_RenderText_Solid(arial_test, "HELLO WORLD!", color_test);*/
     }
-
+    popUp->DrawAll(surface, runTime);
     SDL_Flip(surface);
 }
 
