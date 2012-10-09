@@ -34,31 +34,8 @@ void Object::Move(Uint32 timeElapsed)
 
     x += vec.x;
     y += vec.y;
-    /*Each call to Load goes through Surface::Load and generates an iteration through
-    ALL loaded images which is fairly uneffective... Load images when instansiating instead
-    in a class which derives from Object, as agreed earlier called Player...*/
-    /*if(vec.x < 0.0)
-    {
-        Load("files/sprites/link/linkR.gif");
-    }
-    else if( vec.x > 0.0)
-    {
-        Load("files/sprites/link/linkL.gif");
-    }
-
-    if(vec.y < 0.0)
-    {
-        Load("files/sprites/link/linkU.gif");
-    }
-    else if( vec.y > 0.0)
-    {
-        Load("files/sprites/link/linkD1.gif");
-    }*/
 }
 
-/*instead of setmovement, maybe appendMovement could be used..
-That way one key won't override another. Then simply limit the total movement by
-normalize the vector and multiply it with a constant...*/
 void Object::SetMovementX(float X)
 {
     vec.x = X;
@@ -83,6 +60,72 @@ void Object::setLastVec(Vec v)
 {
     lastVec=v;
 }
+
+void Object::checkCollison(int ID)
+{
+    if(isCollidable)
+    {
+        if(getVec().x != 0 || getVec().y != 0)
+        {
+            bool isColliding;
+            for(int i = 0; i < Sprite::getListSize(); i++)
+            {
+                isColliding = true;
+                if(ID != i && Sprite::getListPos(i)->isCollidable)
+                {
+                    if(getPosY() + getHeight() < Sprite::getListPos(i)->getPosY())
+                    {
+                        isColliding = false;
+                    }
+                    else if(getPosY() > Sprite::getListPos(i)->getPosY() + Sprite::getListPos(i)->getHeight())
+                    {
+                        isColliding = false;
+                    }
+
+                    if(getPosX() + getWidth() < Sprite::getListPos(i)->getPosX())
+                    {
+                        isColliding = false;
+                    }
+                    else if(getPosX() > Sprite::getListPos(i)->getPosX() + Sprite::getListPos(i)->getWidth())
+                    {
+                        isColliding = false;
+                    }
+                    if(isColliding)
+                    {
+                        Vec objVec = getVec();
+                        int objAx = getPosX();
+                        int objAy = getPosY();
+                        int objAw = (int)getWidth();
+                        int objAh = (int)getHeight();
+                        int objBx = Sprite::getListPos(i)->getPosX();
+                        int objBy = Sprite::getListPos(i)->getPosY();
+                        int objBw = (int)Sprite::getListPos(i)->getWidth();
+                        int objBh = (int)Sprite::getListPos(i)->getHeight();
+
+                        if(objVec.x < 0)
+                        {
+                            setPos(objBx+objBw+1,objAy);
+                        }
+                        else if(objVec.x > 0)
+                        {
+                            setPos(objBx-objAw-1,objAy);
+                        }
+
+                        if(objVec.y < 0)
+                        {
+                            setPos(objAx,objBy+objBh+1);
+                        }
+                        else if(objVec.y > 0)
+                        {
+                            setPos(objAx,objBy-objAh-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 Object::~Object()
 {

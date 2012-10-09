@@ -43,6 +43,17 @@ bool Tile::loadAll()
             filepath.append(".png");
 
             Sprite* tmpSprite = new Sprite(column*width, row*height);
+            if(cStr.compare("c") == 0)
+                tmpSprite->setCollidable(true);
+            else if(cStr.compare("d") == 0)
+                tmpSprite->setCollidable(true);
+            else if(cStr.compare("f") == 0)
+                tmpSprite->setCollidable(true);
+            else if(cStr.compare("g") == 0)
+                tmpSprite->setCollidable(true);
+            else if(cStr.compare("h") == 0)
+                tmpSprite->setCollidable(true);
+
             tmpSprite->Load(filepath);
 
             column++;
