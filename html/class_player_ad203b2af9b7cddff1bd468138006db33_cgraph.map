@@ -1,0 +1,9 @@
+<map id="Player::Draw" name="Player::Draw">
+<area shape="rect" id="node3" href="$struct_vec.html#ad083231cdb61e042b5f259743fddfb11" title="Vec::Abs" alt="" coords="166,5,242,32"/>
+<area shape="rect" id="node5" href="$class_sprite.html#ac9cbe4ca333c04484e30ba3f31078a03" title="Sprite::setFPS" alt="" coords="150,56,258,83"/>
+<area shape="rect" id="node7" href="$class_sprite.html#a5840bcfd1ff6237f313c42a1a450702f" title="Sprite::Draw" alt="" coords="157,107,251,133"/>
+<area shape="rect" id="node9" href="$class_surface.html#aa45ef5b64f13f6a4c6f3afdf31bbd0d6" title="Surface::Draw" alt="" coords="307,107,410,133"/>
+<area shape="rect" id="node11" href="$class_camera.html#a25c2f42b7e74195de503aa7606852891" title="Camera::getX" alt="" coords="462,56,562,83"/>
+<area shape="rect" id="node13" href="$class_camera.html#a6f5143acdae3be176199f998ac0c904c" title="Camera::getY" alt="" coords="461,107,563,133"/>
+<area shape="rect" id="node15" href="$class_camera.html#acaacdc1fcffca9bee5d5ba8119e939f9" title="Camera::getW" alt="" coords="459,157,565,184"/>
+</map>

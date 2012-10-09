@@ -1,0 +1,4 @@
+<map id="Game::CleanUp" name="Game::CleanUp">
+<area shape="rect" id="node3" href="$class_sprite.html#aa6c72f2af1cb98027ed3c114b600a8d4" title="Sprite::Cleanup" alt="" coords="174,5,285,32"/>
+<area shape="rect" id="node5" href="$class_surface.html#a750b46f325bd687efdc01bc2a531bdad" title="Surface::Cleanup" alt="" coords="169,56,290,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Player::Update" name="Player::Update">
+<area shape="rect" id="node3" href="$class_object.html#af7d6cadf5dd57aedccc1d88610c4cd89" title="Object::Move" alt="" coords="184,31,283,57"/>
+<area shape="rect" id="node9" href="$class_camera.html#a119a6353921cc190157b18a5ccc7104c" title="Camera::setPosition" alt="" coords="163,81,303,108"/>
+<area shape="rect" id="node5" href="$struct_vec.html#ae6daa17613a19e0bc12af8e9401d0404" title="Vec::Normalize" alt="" coords="353,5,463,32"/>
+<area shape="rect" id="node7" href="$struct_vec.html#ad083231cdb61e042b5f259743fddfb11" title="Vec::Abs" alt="" coords="370,56,446,83"/>
+</map>

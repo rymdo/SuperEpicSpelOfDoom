@@ -1,0 +1,8 @@
+<map id="Game::NewGame" name="Game::NewGame">
+<area shape="rect" id="node3" href="$class_surface.html#a90671ab4b485c9cf6e726fcc0ddc11ed" title="Surface::setCamera" alt="" coords="179,5,317,32"/>
+<area shape="rect" id="node5" href="$class_tile.html#a7284ebe37d445fc1ba78275614bf6631" title="Tile::loadAll" alt="" coords="203,56,293,83"/>
+<area shape="rect" id="node11" href="$class_sprite.html#a238bd2bb1dac67c21f00fb6d3784bc28" title="Sprite::Load" alt="" coords="389,107,481,133"/>
+<area shape="rect" id="node7" href="$class_sprite.html#ae0c5126dabe9a6418316a4f0e7e498c0" title="Sprite::Sprite" alt="" coords="385,5,484,32"/>
+<area shape="rect" id="node9" href="$class_sprite.html#a4be968c3bc48af3cd6fa3f434abb6fca" title="Sprite::setCollidable" alt="" coords="365,56,504,83"/>
+<area shape="rect" id="node13" href="$class_surface.html#a158e1ec47f76a9c9f04deafb06a2e55a" title="Surface::Load" alt="" coords="553,107,655,133"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Surface::Load" name="Surface::Load">
+<area shape="rect" id="node3" href="$class_player.html#aad1f19358c4fedb2db9e9428c71763c8" title="Player::Load" alt="" coords="158,5,253,32"/>
+<area shape="rect" id="node5" href="$class_sprite.html#a238bd2bb1dac67c21f00fb6d3784bc28" title="Sprite::Load" alt="" coords="159,56,251,83"/>
+<area shape="rect" id="node7" href="$class_game.html#a4fa2887f8469cee151ccaf64f72832f1" title="Game::OnKeyDown" alt="" coords="302,5,439,32"/>
+<area shape="rect" id="node9" href="$class_game.html#a8a5891a39703cbb2d62b075f49c2f0b9" title="Game::NewGame" alt="" coords="488,81,613,108"/>
+<area shape="rect" id="node11" href="$class_tile.html#a7284ebe37d445fc1ba78275614bf6631" title="Tile::loadAll" alt="" coords="326,107,415,133"/>
+</map>

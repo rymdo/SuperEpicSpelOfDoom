@@ -1,0 +1,6 @@
+<map id="Tile::loadAll" name="Tile::loadAll">
+<area shape="rect" id="node3" href="$class_sprite.html#ae0c5126dabe9a6418316a4f0e7e498c0" title="Sprite::Sprite" alt="" coords="164,5,263,32"/>
+<area shape="rect" id="node5" href="$class_sprite.html#a4be968c3bc48af3cd6fa3f434abb6fca" title="Sprite::setCollidable" alt="" coords="144,56,283,83"/>
+<area shape="rect" id="node7" href="$class_sprite.html#a238bd2bb1dac67c21f00fb6d3784bc28" title="Sprite::Load" alt="" coords="167,107,259,133"/>
+<area shape="rect" id="node9" href="$class_surface.html#a158e1ec47f76a9c9f04deafb06a2e55a" title="Surface::Load" alt="" coords="331,107,434,133"/>
+</map>

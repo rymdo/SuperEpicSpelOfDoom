@@ -1,0 +1,4 @@
+<map id="Game::Render" name="Game::Render">
+<area shape="rect" id="node3" href="$class_sprite.html#ad27ccbc3d8fc3af4bc913dd9b204ef78" title="Sprite::DrawAll" alt="" coords="161,5,269,32"/>
+<area shape="rect" id="node5" href="$class_sprite.html#aef4f4ed035c9f8505d18f921ce33d9f0" title="Sprite::zSort" alt="" coords="318,5,413,32"/>
+</map>

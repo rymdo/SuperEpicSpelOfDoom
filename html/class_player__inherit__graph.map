@@ -1,0 +1,4 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node2" href="$class_object.html" title="{Object\n|# PPS\l# lastVec\l|+ Object()\l+ ~Object()\l+ Update()\l+ SetMovementX()\l+ SetMovementY()\l+ getVec()\l+ getLastVec()\l+ setLastVec()\l+ checkCollison()\l# Move()\l}" alt="" coords="5,528,136,752"/>
+<area shape="rect" id="node4" href="$class_sprite.html" title="{Sprite\n|+ isCollidable\l# x\l# y\l# z\l# vec\l# frameHeight\l# frameTime\l# totalFrames\l# src\l|+ Sprite()\l+ ~Sprite()\l+ Load()\l+ Draw()\l+ Update()\l+ getVec()\l+ setFPS()\l+ getPosX()\l+ getPosY()\l+ getHeight()\l+ getWidth()\l+ checkCollison()\l+ setPos()\l+ setCollidable()\l+ UpdateAll()\l+ DrawAll()\l+ Cleanup()\l+ zSort()\l+ getListPos()\l+ getListSize()\l}" alt="" coords="9,6,132,479"/>
+</map>

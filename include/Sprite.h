@@ -52,7 +52,6 @@ class Sprite
         int     frameHeight;
         int     frameTime;
         int     totalFrames;
-        int     footprint;
         SDL_Surface* src;
 
 

@@ -1,0 +1,4 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node2" href="$class_sprite.html" title="{Sprite\n|+ isCollidable\l# x\l# y\l# z\l# frameHeight\l# frameTime\l# totalFrames\l# src\l|+ Sprite()\l+ ~Sprite()\l+ Load()\l+ Draw()\l+ Update()\l+ getVec()\l+ setFPS()\l+ getPosX()\l+ getPosY()\l+ getHeight()\l+ getWidth()\l+ checkCollison()\l+ setPos()\l+ setCollidable()\l+ UpdateAll()\l+ DrawAll()\l+ Cleanup()\l+ zSort()\l+ getListPos()\l+ getListSize()\l}" alt="" coords="103,192,225,651"/>
+<area shape="rect" id="node4" href="$struct_vec.html" title="{Vec\n|+ x\l+ y\l|+ Abs()\l+ Normalize()\l+ operator*=()\l}" alt="" coords="22,6,124,127"/>
+</map>

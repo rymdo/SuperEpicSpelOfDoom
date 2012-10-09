@@ -1,0 +1,6 @@
+<map id="Vec::Abs" name="Vec::Abs">
+<area shape="rect" id="node3" href="$class_object.html#af7d6cadf5dd57aedccc1d88610c4cd89" title="Object::Move" alt="" coords="131,31,229,57"/>
+<area shape="rect" id="node9" href="$class_player.html#ad203b2af9b7cddff1bd468138006db33" title="Player::Draw" alt="" coords="132,81,228,108"/>
+<area shape="rect" id="node5" href="$class_object.html#a60ae3078fa4e3d6bc6eb987959613d95" title="Object::Update" alt="" coords="277,5,387,32"/>
+<area shape="rect" id="node7" href="$class_player.html#a4e34d2eee6ea664e2a8d1cd9e9b5350f" title="Player::Update" alt="" coords="278,56,386,83"/>
+</map>

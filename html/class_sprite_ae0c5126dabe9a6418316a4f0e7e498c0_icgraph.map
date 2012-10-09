@@ -1,0 +1,4 @@
+<map id="Sprite::Sprite" name="Sprite::Sprite">
+<area shape="rect" id="node3" href="$class_tile.html#a7284ebe37d445fc1ba78275614bf6631" title="Tile::loadAll" alt="" coords="153,5,242,32"/>
+<area shape="rect" id="node5" href="$class_game.html#a8a5891a39703cbb2d62b075f49c2f0b9" title="Game::NewGame" alt="" coords="291,5,416,32"/>
+</map>

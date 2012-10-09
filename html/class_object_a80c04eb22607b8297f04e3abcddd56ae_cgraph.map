@@ -1,0 +1,10 @@
+<map id="Object::checkCollison" name="Object::checkCollison">
+<area shape="rect" id="node3" href="$class_object.html#a3e17c6d213d19ca542c4aa9e5c9c5ffd" title="Object::getVec" alt="" coords="213,5,323,32"/>
+<area shape="rect" id="node5" href="$class_sprite.html#ab5bb65de7d3a4818f3f8921203a9d7ac" title="Sprite::getListSize" alt="" coords="203,56,333,83"/>
+<area shape="rect" id="node7" href="$class_sprite.html#a47497fa5357e553691638d559a4634e9" title="Sprite::getListPos" alt="" coords="205,107,331,133"/>
+<area shape="rect" id="node9" href="$class_sprite.html#ad5da1383657c844f9b155a5327d47f9a" title="Sprite::getPosY" alt="" coords="211,157,325,184"/>
+<area shape="rect" id="node11" href="$class_sprite.html#a573a55afbcfb12efc2d09be70ccff23b" title="Sprite::getHeight" alt="" coords="209,208,327,235"/>
+<area shape="rect" id="node13" href="$class_sprite.html#a7310aa2461caf13cbaf54938eaedf312" title="Sprite::getPosX" alt="" coords="212,259,324,285"/>
+<area shape="rect" id="node15" href="$class_sprite.html#aaa4ef52681050147b3351b2705f7c76b" title="Sprite::getWidth" alt="" coords="210,309,326,336"/>
+<area shape="rect" id="node17" href="$class_sprite.html#aad77f8bba03dfdad1b7cf7d108fffc66" title="Sprite::setPos" alt="" coords="215,360,321,387"/>
+</map>

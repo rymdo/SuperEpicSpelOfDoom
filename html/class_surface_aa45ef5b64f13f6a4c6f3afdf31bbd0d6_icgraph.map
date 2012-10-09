@@ -1,0 +1,4 @@
+<map id="Surface::Draw" name="Surface::Draw">
+<area shape="rect" id="node3" href="$class_sprite.html#a5840bcfd1ff6237f313c42a1a450702f" title="Sprite::Draw" alt="" coords="157,5,251,32"/>
+<area shape="rect" id="node5" href="$class_player.html#ad203b2af9b7cddff1bd468138006db33" title="Player::Draw" alt="" coords="299,5,395,32"/>
+</map>

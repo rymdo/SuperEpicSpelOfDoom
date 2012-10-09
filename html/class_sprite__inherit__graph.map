@@ -1,0 +1,5 @@
+<map id="Sprite" name="Sprite">
+<area shape="rect" id="node3" href="$class_object.html" title="{Object\n|# PPS\l# lastVec\l|+ Object()\l+ ~Object()\l+ Update()\l+ SetMovementX()\l+ SetMovementY()\l+ getVec()\l+ getLastVec()\l+ setLastVec()\l+ checkCollison()\l# Move()\l}" alt="" coords="5,528,136,752"/>
+<area shape="rect" id="node7" href="$class_tile.html" title="{Tile\n||+ Tile()\l+ ~Tile()\l+ loadAll()\l}" alt="" coords="161,587,241,693"/>
+<area shape="rect" id="node5" href="$class_player.html" title="{Player\n||+ Player()\l+ ~Player()\l+ Load()\l+ Draw()\l+ Update()\l}" alt="" coords="27,800,113,936"/>
+</map>

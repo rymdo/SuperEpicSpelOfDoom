@@ -1,0 +1,3 @@
+<map id="Tile" name="Tile">
+<area shape="rect" id="node2" href="$class_sprite.html" title="{Sprite\n|+ isCollidable\l# x\l# y\l# z\l# vec\l# frameHeight\l# frameTime\l# totalFrames\l# src\l|+ Sprite()\l+ ~Sprite()\l+ Load()\l+ Draw()\l+ Update()\l+ getVec()\l+ setFPS()\l+ getPosX()\l+ getPosY()\l+ getHeight()\l+ getWidth()\l+ checkCollison()\l+ setPos()\l+ setCollidable()\l+ UpdateAll()\l+ DrawAll()\l+ Cleanup()\l+ zSort()\l+ getListPos()\l+ getListSize()\l}" alt="" coords="5,6,128,479"/>
+</map>

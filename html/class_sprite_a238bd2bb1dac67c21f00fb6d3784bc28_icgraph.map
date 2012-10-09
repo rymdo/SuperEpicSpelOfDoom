@@ -1,0 +1,5 @@
+<map id="Sprite::Load" name="Sprite::Load">
+<area shape="rect" id="node3" href="$class_game.html#a4fa2887f8469cee151ccaf64f72832f1" title="Game::OnKeyDown" alt="" coords="147,5,285,32"/>
+<area shape="rect" id="node5" href="$class_game.html#a8a5891a39703cbb2d62b075f49c2f0b9" title="Game::NewGame" alt="" coords="333,81,459,108"/>
+<area shape="rect" id="node7" href="$class_tile.html#a7284ebe37d445fc1ba78275614bf6631" title="Tile::loadAll" alt="" coords="171,107,261,133"/>
+</map>

@@ -8,7 +8,14 @@
 #include "../include/sprite.h"
 
 using namespace std;
-
+/**
+Kontruktor för Objekt
+@param X - X postiton
+@param Y - afndf
+@param Z - he
+@param FPS - hehe
+@param FrameHeight - test
+*/
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
     PrevX = X;
