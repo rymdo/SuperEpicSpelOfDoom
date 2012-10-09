@@ -11,20 +11,21 @@ class Object : public Sprite
 {
     public:
         Object(float X=0, float Y=0, int Z=10, int FPS = 0, int FrameHeight = 0);
-        virtual ~Object();
-        virtual void Update(Uint32 gameTime, Uint32 timeElapsed);
-        void SetMovementX(float X);
-        void SetMovementY(float Y);
-        Vec getVec();
-        Vec getLastVec();
-        void setLastVec(Vec v);
+        virtual         ~Object();
+        virtual void    Update(Uint32 gameTime, Uint32 timeElapsed);
+        void            SetMovementX(float X);
+        void            SetMovementY(float Y);
+        Vec             getVec();
+        Vec             getLastVec();
+        void            setLastVec(Vec v);
+        void            checkCollison(int ID);
     protected:
-        void Move(Uint32 timeElapsed);
-        float PPS; // Pixels Per Second
-        Vec lastVec;
+        void    Move(Uint32 timeElapsed);
+        float   PPS; // Pixels Per Second
+        Vec     lastVec;
 
     private:
-        int PrevX, PrevY;
+        int PrevX, PrevY; //Used at all?
 
 };
 

@@ -145,10 +145,8 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     if(sym == SDLK_SPACE)
     {
         cout << "Player x: " << player->getPosX() << " y: " << player->getPosY() << endl;
-
         Object* testObj = new Object(player->getPosX(), player->getPosY()+50, 10, 3, 50);
         testObj->Load("files/sprites/cinnamonbun.png");
-
     }
 }
 

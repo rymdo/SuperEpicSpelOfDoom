@@ -32,6 +32,7 @@ class Game : public Event
         bool Event(SDL_Event* event);
         void Loop();
         void Render();
+        void checkObjects();
         void CleanUp();
         void Exit();
 
