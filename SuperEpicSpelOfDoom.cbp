@@ -51,6 +51,7 @@
 		<Unit filename="include\Menu.h" />
 		<Unit filename="include\Object.h" />
 		<Unit filename="include\Player.h" />
+		<Unit filename="include\Popup.h" />
 		<Unit filename="include\Sprite.h" />
 		<Unit filename="include\Surface.h" />
 		<Unit filename="include\Tile.h" />
@@ -65,6 +66,7 @@
 		<Unit filename="src\Menu.cpp" />
 		<Unit filename="src\Object.cpp" />
 		<Unit filename="src\Player.cpp" />
+		<Unit filename="src\Popup.cpp" />
 		<Unit filename="src\Sprite.cpp" />
 		<Unit filename="src\Surface.cpp" />
 		<Unit filename="src\Tile.cpp" />

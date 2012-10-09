@@ -54,11 +54,6 @@ bool Menu::Draw(SDL_Surface* surface)
     }
 }
 
-void Menu::UpdateMenu()
-{
-
-}
-
 void Menu::next()
 {
     if(activeItem>=menuItems.size()-1)
