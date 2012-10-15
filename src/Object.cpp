@@ -9,8 +9,8 @@
 
 using namespace std;
 /**
-Kontruktor för Objekt
-@param X - X postiton
+Kontruktor för Object
+@param X X position
 @param Y - afndf
 @param Z - he
 @param FPS - hehe

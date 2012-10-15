@@ -16,8 +16,8 @@ class Camera
         virtual ~Camera();
         int getX();
         int getY();
-        int getH();
-        int getW();
+        static int getH();
+        static int getW();
 
         void setPosition(int x, int y);
     private:

@@ -2,8 +2,11 @@
 
 using namespace std;
 
-vector<Sprite*> Sprite::list;
+vector<Sprite*> Sprite::list; //List of all current sprites
 
+/**
+Constructor for Sprite
+*/
 Sprite::Sprite(float X, float Y, int Z, int FPS, int FrameHeight)
 {
     src = NULL;
