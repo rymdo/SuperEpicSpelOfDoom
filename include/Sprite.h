@@ -34,30 +34,27 @@ class Sprite
         virtual int     getPosY();
         virtual float   getHeight();
         virtual float   getWidth();
-        virtual void    checkCollison(int ID);
+        virtual void    checkCollison();
 
         friend bool     operator<(Sprite a, Sprite b);
         static bool     zSort(Sprite* a, Sprite* b);
         void            setPos(float X, float Y);
 
         virtual void    setCollidable(bool state);
-        static Sprite*  getListPos(int position);
-        static int      getListSize();
         bool            isCollidable;
     protected:
-        float   x;
-        float   y;
-        int     z;
-        Vec     vec;
-        int     frameHeight;
-        int     frameTime;
-        int     totalFrames;
-        SDL_Surface* src;
+        float           x;
+        float           y;
+        int             z;
+        Vec             vec;
+        int             frameHeight;
+        int             frameTime;
+        int             totalFrames;
+        SDL_Surface*    src;
 
-
+        static vector<Sprite*> list; //lista för alla sprites
 
     private:
-        static vector<Sprite*> list; //lista för alla sprites
 };
 
 #endif // SPRITE_H

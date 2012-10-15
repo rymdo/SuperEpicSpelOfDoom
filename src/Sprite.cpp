@@ -124,14 +124,14 @@ static: Updates all sprites. Iterates through all Sprite's and calls Sprite::Upd
     {
 
         list[i]->Update(gameTime, timeElapsed);
-        list[i]->checkCollison(i);
+        //list[i]->checkCollison();
     }
 }
 
 /**
 Checks collision with other objects
 */
-void Sprite::checkCollison(int ID)
+void Sprite::checkCollison()
 {
 
 }
@@ -223,29 +223,12 @@ int Sprite::getPosY()
 }
 
 /**
-Decide if a sprite collidable
+Decide if a sprite is collidable
 @param state    true if collidable, false otherwise
 */
 void Sprite::setCollidable(bool state)
 {
     isCollidable = state;
-}
-
-/**
-Returns sprite/object/tile/player from give list position
-@param position - position to return.
-*/
-Sprite* Sprite::getListPos(int position)
-{
-    return list.at(position);
-}
-
-/**
-Return the list size
-*/
-int Sprite::getListSize()
-{
-    return list.size();
 }
 
 Sprite::~Sprite()

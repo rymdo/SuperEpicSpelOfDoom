@@ -1,10 +1,20 @@
 #include "../include/Player.h"
 
+/**
+Constructor for Player
+@param Cam  Camera
+@param X    X position
+@param Y    Y position
+@param Z    Z position (depth)
+*/
 Player::Player(Camera* Cam, float X, float Y, int Z) : Object(X, Y, Z, 4, 32)
 {
     cam = Cam;
 }
 
+/**
+Load all spritemaps for the player, selects a current spritemap and sets the movement (Pixel Per Second)
+*/
 void Player::Load()
 {
     string standFront = "files/sprites/monk/monk_stand_front.png";
@@ -29,12 +39,24 @@ void Player::Load()
     PPS = 200;
 }
 
+/**
+Update the player and moves the camera to player position
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+*/
 void Player::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
-    Move(timeElapsed);
+    Object::Update(gameTime, timeElapsed);
     cam->setPosition(x, y);
 }
 
+/**
+Selects the appropiate spritemap for animation and draws the player
+@param dest         Draw onto this surface
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+@return true on success, false on fail
+*/
 bool Player::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
     if (vec.Abs() == 0)

@@ -18,8 +18,6 @@ Kontruktor för Object
 */
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
-    PrevX = X;
-    PrevY = Y;
     isCollidable = true;
 }
 
@@ -31,6 +29,7 @@ Update the Object, also moves it with Object::Move
 void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
     Move(timeElapsed);
+    checkCollison();
 }
 
 /**
@@ -94,74 +93,79 @@ void Object::setLastVec(Vec v)
 }
 
 /**
-Check collision with other objects
-@param ID of object
+Check collision with all other objects
 */
-void Object::checkCollison(int ID)
+void Object::checkCollison()
 {
-    if(isCollidable)
+    if(!isCollidable) return; //if not set to be able to collide, dont check collisions
+    if(getVec().Abs() == 0) return; //if not moving, dont check collisions
+
+    bool isColliding;
+    for(int i = 0; i < list.size(); i++)
     {
-        if(getVec().x != 0 || getVec().y != 0)
+        isColliding = true;
+
+        if (!list[i]->isCollidable) continue; //if the other object cant collide, dont check
+        if (this == list[i]) continue; //dont check collisions with self
+
+        if(getPosY() + getHeight() < list[i]->getPosY())
         {
-            bool isColliding;
-            for(int i = 0; i < Sprite::getListSize(); i++)
-            {
-                isColliding = true;
-                if(ID != i && Sprite::getListPos(i)->isCollidable)
-                {
-                    if(getPosY() + getHeight() < Sprite::getListPos(i)->getPosY())
-                    {
-                        isColliding = false;
-                    }
-                    else if(getPosY() > Sprite::getListPos(i)->getPosY() + Sprite::getListPos(i)->getHeight())
-                    {
-                        isColliding = false;
-                    }
-
-                    if(getPosX() + getWidth() < Sprite::getListPos(i)->getPosX())
-                    {
-                        isColliding = false;
-                    }
-                    else if(getPosX() > Sprite::getListPos(i)->getPosX() + Sprite::getListPos(i)->getWidth())
-                    {
-                        isColliding = false;
-                    }
-                    if(isColliding)
-                    {
-                        Vec objVec = getVec();
-                        int objAx = getPosX();
-                        int objAy = getPosY();
-                        int objAw = (int)getWidth();
-                        int objAh = (int)getHeight();
-                        int objBx = Sprite::getListPos(i)->getPosX();
-                        int objBy = Sprite::getListPos(i)->getPosY();
-                        int objBw = (int)Sprite::getListPos(i)->getWidth();
-                        int objBh = (int)Sprite::getListPos(i)->getHeight();
-
-                        if(objVec.x < 0)
-                        {
-                            setPos(objBx+objBw+1,objAy);
-                        }
-                        else if(objVec.x > 0)
-                        {
-                            setPos(objBx-objAw-1,objAy);
-                        }
-
-                        if(objVec.y < 0)
-                        {
-                            setPos(objAx,objBy+objBh+1);
-                        }
-                        else if(objVec.y > 0)
-                        {
-                            setPos(objAx,objBy-objAh-1);
-                        }
-                    }
-                }
-            }
+            isColliding = false;
         }
+        else if(getPosY() > list[i]->getPosY() + list[i]->getHeight())
+        {
+            isColliding = false;
+        }
+
+        if(getPosX() + getWidth() < list[i]->getPosX())
+        {
+            isColliding = false;
+        }
+        else if(getPosX() > list[i]->getPosX() + list[i]->getWidth())
+        {
+            isColliding = false;
+        }
+
+        //collision is happening! OMFG!
+        if(isColliding)
+            OnHit(list[i]);
     }
 }
 
+/**
+Handle a hit
+@param Sprite that hits
+*/
+void Object::OnHit(Sprite* s)
+{
+    Vec objVec = getVec();
+    int objAx = getPosX();
+    int objAy = getPosY();
+    int objAw = (int)getWidth();
+    int objAh = (int)getHeight();
+    int objBx = s->getPosX();
+    int objBy = s->getPosY();
+    int objBw = (int)s->getWidth();
+    int objBh = (int)s->getHeight();
+
+    if(objVec.x < 0)
+    {
+        setPos(objBx+objBw+1,objAy);
+    }
+    else if(objVec.x > 0)
+    {
+        setPos(objBx-objAw-1,objAy);
+    }
+
+    if(objVec.y < 0)
+    {
+        setPos(objAx,objBy+objBh+1);
+    }
+    else if(objVec.y > 0)
+    {
+        setPos(objAx,objBy-objAh-1);
+    }
+}
 
 Object::~Object()
 {

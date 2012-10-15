@@ -7,6 +7,8 @@
 #include "../include/sprite.h"
 #include "../include/Vec.h"
 
+
+
 class Object : public Sprite
 {
     public:
@@ -18,14 +20,14 @@ class Object : public Sprite
         Vec             getVec();
         Vec             getLastVec();
         void            setLastVec(Vec v);
-        void            checkCollison(int ID);
+        virtual void    checkCollison();
+        void            OnHit(Sprite* s);
     protected:
         void    Move(Uint32 timeElapsed);
         float   PPS; // Pixels Per Second
         Vec     lastVec;
 
     private:
-        int PrevX, PrevY; //Used at all?
 
 };
 
