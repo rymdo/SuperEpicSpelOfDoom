@@ -1,10 +1,14 @@
 #include "../include/Surface.h"
 
 using namespace std;
-/*static*/ vector<Surface*> Surface::list;
-/*static*/ Camera* Surface::cam;
 
-//Constructor
+vector<Surface*> Surface::list; //< static: vector for self documenting Surfaces
+Camera* Surface::cam; // static: Camera* for drawing surfaces in the world
+
+/**
+@param file String search path to image
+@param surf Corresponding loaded SDL_Surface*
+*/
 Surface::Surface(string file, SDL_Surface* surf)
 {
     filename = file; //string
@@ -13,30 +17,44 @@ Surface::Surface(string file, SDL_Surface* surf)
     list.push_back(this); //sparar instansen i en statisk lista (pekare)
 }
 
+/**
+Destructor
+Frees member surface(SDL_Surface*)
+*/
 Surface::~Surface()
 {
     SDL_FreeSurface(surface);
 }
 
-
-/*static*/ void Surface::Cleanup()
+/**
+static: Function to clean up the self documentation
+*/
+void Surface::Cleanup()
 {
     Surface::list.clear();
 }
 
-//returnerar laddad surface för instans
+/**
+@return surface (SDL_Surface*)
+*/
 SDL_Surface* Surface::getSurface()
 {
     return surface;
 }
 
-//returnerar filename för instans
+/**
+@return filename (string)
+*/
 string Surface::getFilename()
 {
     return filename;
 }
 
-//Söker i statiska Surface::list efter en surface med samma filnamn och returnerar dess surface i så fall
+/**
+static: Searches for already loaded surfaces by filename
+@param file filename to search for
+@return surface if exists else NULL
+*/
 SDL_Surface* Surface::GetLoaded(char* file)
 {
     for(int i=0; i<list.size(); i++)
@@ -50,8 +68,12 @@ SDL_Surface* Surface::GetLoaded(char* file)
     return NULL;
 }
 
-//Ladda ny bildfil och spara i en SDL_Surface, sparar ett relationsobjekt Surface, mellan SDL_Surface och filename
-/*static*/ SDL_Surface* Surface::Load(char* file)
+/**
+static: Loads filename and stores a new relation creates
+@param file filename to load
+@return the loaded SDL_Surface*
+*/
+SDL_Surface* Surface::Load(char* file)
 {
     SDL_Surface* ret = GetLoaded(file); //<-- getLoaded returnerar SDL_Surface* eller NULL
 
@@ -76,8 +98,19 @@ SDL_Surface* Surface::GetLoaded(char* file)
     return ret;
 }
 
-//Ritar en surface på en annan...
-/*static*/ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, int src_x, int src_y, int src_w, int src_h)
+/**
+static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*) inside view of Surface::cam
+@param dest     Destination surface - draws onto this surface
+@param src      Source surface - draws this surface onto the destination
+@param dest_x   Begin to draw at this X position on destination surface
+@param dest_y   Begin to draw at this Y position on destination surface
+@param src_x    Begin drawing from this X position from the source
+@param src_y    Begin drawing from this Y position from the source
+@param src_w    Draw this width from the start X position
+@param src_h    Draw this height from the start Y position
+@return true on success, false on fail
+*/
+bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, int src_x, int src_y, int src_w, int src_h)
 {
     if(dest == NULL || src == NULL)
     {
@@ -105,7 +138,14 @@ SDL_Surface* Surface::GetLoaded(char* file)
     return true;
 }
 
-//Ritar en surface på en annan...
+/**
+static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*) inside view of Surface::cam
+@param dest     Destination surface - draws onto this surface
+@param src      Source surface - draws this surface onto the destination
+@param x        Begin to draw at this X position on destination surface
+@param y        Begin to draw at this Y position on destination surface
+@return true on success, false on fail
+*/
 /*static*/ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int x, int y)
 {
     if(dest == NULL || src == NULL)
@@ -129,7 +169,15 @@ SDL_Surface* Surface::GetLoaded(char* file)
     return true;
 }
 
-//Ritar en surface på en annan...
+/**
+static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*)
+@param dest     Destination surface - draws onto this surface
+@param src      Source surface - draws this surface onto the destination
+@param x        Begin to draw at this X position on destination surface
+@param y        Begin to draw at this Y position on destination surface
+@return true on success, false on fail
+*/
+
 /*static*/ bool Surface::DrawStatic(SDL_Surface* dest, SDL_Surface* src, int x, int y)
 {
     if(dest == NULL || src == NULL)

@@ -2,10 +2,16 @@
 
 using namespace std;
 
-vector<Sprite*> Sprite::list; //List of all current sprites
+vector<Sprite*> Sprite::list; //List for self documenting all sprites
 
 /**
 Constructor for Sprite
+@param X            X position
+@param Y            Y position
+@param Z            Z position (depth)
+@param FPS          the 'Frames Per Second' to animate the Sprite
+@param FrameHeight  Height of one frame in the spritemap
+@return true on success, false on fail
 */
 Sprite::Sprite(float X, float Y, int Z, int FPS, int FrameHeight)
 {
@@ -26,6 +32,10 @@ Sprite::Sprite(float X, float Y, int Z, int FPS, int FrameHeight)
     list.push_back(this); //Sparar instansen i statiska Sprite::list
 }
 
+/**
+Sets the frames per second
+@param FPS          the Frames per Second to animate the Sprite
+*/
 void Sprite::setFPS(int FPS)
 {
     frameTime = 1;
@@ -34,7 +44,10 @@ void Sprite::setFPS(int FPS)
         frameTime = 1000/FPS;
 }
 
-//Laddar sprite till src via Surface::Load
+/**
+Loads a image file via Surface::Load
+@param file     path to image
+*/
 void Sprite::Load(string file)
 {
     src = Surface::Load((char*)file.c_str());
@@ -43,7 +56,13 @@ void Sprite::Load(string file)
         totalFrames = (src->h/frameHeight);
 }
 
-//Ritar ut instansens src på dest via Surface::Draw
+/**
+Draws the Sprite surface/image onto a SDL_Surface* via Surface::Draw
+@param dest         Draw onto this surface
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+@return true on success, false on fail
+*/
 bool Sprite::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
     if (src == NULL) return false;
@@ -58,12 +77,22 @@ bool Sprite::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
     return Surface::Draw(dest, src, x, y, 0, srcY, src->w, frameHeight);
 }
 
+/**
+Update the sprites
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+*/
 void Sprite::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
 
 }
 
-//Ritar ut alla instanser i Sprite::list
+/**
+static: Draws all sprites. Iterates through all Sprite's and calls Sprite::Draw for each of them
+@param dest         Draw onto this surface
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+*/
 /*static*/ void Sprite::DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
     //sorterar vektorn efter vilket lager de ligger i (vilken z-koordinat de har) i stigande ordn.
@@ -75,13 +104,21 @@ void Sprite::Update(Uint32 gameTime, Uint32 timeElapsed)
     }
 }
 
-//Ritar ut alla instanser i Sprite::list
+/**
+static: Destroys all current Sprites
+*/
 /*static*/ void Sprite::Cleanup()
 {
     list.clear();
 }
 
-void Sprite::UpdateAll(Uint32 gameTime, Uint32 timeElapsed)
+/**
+static: Updates all sprites. Iterates through all Sprite's and calls Sprite::Update for each of them
+@param dest         Draw onto this surface
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+*/
+/*static*/void Sprite::UpdateAll(Uint32 gameTime, Uint32 timeElapsed)
 {
     for(int i=0; i<list.size(); i++)
     {
@@ -96,17 +133,31 @@ void Sprite::checkCollison(int ID)
 
 }
 
+/**
+@return vector representing movement
+*/
 Vec Sprite::getVec()
 {
     return vec;
 }
-//hjälper operatorn att hantera sorteringen av pekarelementen i vektorn
+
+/**
+static: Sort pointers of sprites
+@param a    Pointer to a
+@param b    Pointer to b
+@return     true if a < b, else false
+*/
 /*static*/ bool Sprite::zSort(Sprite* a, Sprite* b)
 {
     return *a<*b;
 }
 
-//operatoröverlagring för att möjliggöra sortering av vektorn list
+/**
+Sort sprites by ascending Z-position(depth), and then ascending Y-position
+@param a    Pointer to a
+@param b    Pointer to b
+@return     true if a < b, else false
+*/
 bool operator<(Sprite a, Sprite b)
 {
     if(a.z == b.z)
@@ -115,12 +166,21 @@ bool operator<(Sprite a, Sprite b)
     return (a.z < b.z);
 }
 
+/**
+Set the Sprite's the position (pivot: upper left corner)
+@param X    X position
+@param Y    Y position
+*/
 void Sprite::setPos(float X, float Y)
 {
     x = (float)X;
     y = (float)Y;
 }
 
+/**
+If the Sprite is animated it will return the frame height of the Sprite otherwise the surface/image height
+@return  Sprite's height
+*/
 float Sprite::getHeight()
 {
     if (frameHeight != 0)
@@ -132,6 +192,9 @@ float Sprite::getHeight()
     return (float)src->h;
 }
 
+/**
+@return  Sprite's widht
+*/
 float Sprite::getWidth()
 {
     if(src == NULL)
@@ -140,20 +203,31 @@ float Sprite::getWidth()
     return src->w;
 }
 
-
+/**
+@return  Sprite's X position
+*/
 int Sprite::getPosX()
 {
     return (int)(floor(x));
 }
+
+/**
+@return  Sprite's Y position
+*/
 int Sprite::getPosY()
 {
     return (int)(floor(y));
 }
 
+/**
+Decide if a sprite collidable
+@param state    true if collidable, false otherwise
+*/
 void Sprite::setCollidable(bool state)
 {
     isCollidable = state;
 }
+
 /**
 Returns sprite/object/tile/player from give list position
 @param position - position to return.
@@ -162,6 +236,7 @@ Sprite* Sprite::getListPos(int position)
 {
     return list.at(position);
 }
+
 /**
 Return the list size
 */
