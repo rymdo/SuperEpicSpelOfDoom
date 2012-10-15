@@ -100,6 +100,7 @@ SDL_Surface* Surface::Load(char* file)
 
 /**
 static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*) inside view of Surface::cam
+Make sure to call Surface::setCamera before calling Draw
 @param dest     Destination surface - draws onto this surface
 @param src      Source surface - draws this surface onto the destination
 @param dest_x   Begin to draw at this X position on destination surface
@@ -140,6 +141,7 @@ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, 
 
 /**
 static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*) inside view of Surface::cam
+Make sure to call Surface::setCamera before calling Draw
 @param dest     Destination surface - draws onto this surface
 @param src      Source surface - draws this surface onto the destination
 @param x        Begin to draw at this X position on destination surface
@@ -177,7 +179,6 @@ static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*)
 @param y        Begin to draw at this Y position on destination surface
 @return true on success, false on fail
 */
-
 /*static*/ bool Surface::DrawStatic(SDL_Surface* dest, SDL_Surface* src, int x, int y)
 {
     if(dest == NULL || src == NULL)
@@ -194,7 +195,11 @@ static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*)
     return true;
 }
 
-    void Surface::setCamera(Camera* a)
-    {
-        Surface::cam = a;
-    }
+/**
+static: Set the camera which Draw depends on
+@param cam     A camera
+*/
+/*static*/void Surface::setCamera(Camera* a)
+{
+    Surface::cam = a;
+}

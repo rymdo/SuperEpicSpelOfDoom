@@ -128,6 +128,9 @@ static: Updates all sprites. Iterates through all Sprite's and calls Sprite::Upd
     }
 }
 
+/**
+Checks collision with other objects
+*/
 void Sprite::checkCollison(int ID)
 {
 

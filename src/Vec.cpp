@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/**
+Normalize (make length = 1 if possible)
+*/
 void Vec::Normalize()
 {
     if(x == 0 && y == 0) return;
@@ -12,6 +15,9 @@ void Vec::Normalize()
     y *= k;
 }
 
+/**
+Returns the absolute (length)
+*/
 float Vec::Abs()
 {
     if(x == 0 && y == 0) return 0;
@@ -19,6 +25,9 @@ float Vec::Abs()
     return sqrt(pow(x, 2) + pow(y, 2));
 }
 
+/**
+Multiply with int
+*/
 Vec operator* (int i, Vec v) { return v*i; }
 Vec operator* (Vec v, int i)
 {
@@ -27,6 +36,9 @@ Vec operator* (Vec v, int i)
     return (v);
 }
 
+/**
+Multiply with float
+*/
 Vec operator* (float f, Vec v) { return v*f; }
 Vec operator* (Vec v, float f)
 {
@@ -35,6 +47,9 @@ Vec operator* (Vec v, float f)
     return (v);
 }
 
+/**
+Short multiply with float
+*/
 Vec Vec::operator*=(float f)
 {
     x *= f;

@@ -2,8 +2,8 @@
 
 using namespace std;
 
-TTF_Font* Font::ARIAL = NULL; /** Arial font 12pt, after Font::Load() has been called else NULL */
-TTF_Font* Font::BITLIM = NULL; /** 8Bitlim font 20pt, after Font::Load() has been called else NULL */
+TTF_Font* Font::ARIAL = NULL; // Arial font 12pt, after Font::Load() has been called else NULL
+TTF_Font* Font::BITLIM = NULL; // 8Bitlim font 20pt, after Font::Load() has been called else NULL
 
 /**
 Default constructor for Font
@@ -15,6 +15,8 @@ Font::Font()
 
 /**
 Loads fonts from file
+Font::ARIAL - Arial 12pt
+Font::BITLIM - 8BitLim 20pt
 */
 void Font::Load()
 {

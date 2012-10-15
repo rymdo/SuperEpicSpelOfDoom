@@ -2,20 +2,38 @@
 
 using namespace std;
 
+/**
+Constructor for Game
+*/
 Game::Game()
 {
     run = true;
 }
 
+/**
+Destructor for Game
+*/
 Game::~Game()
 {
     //dtor
 }
 
+/**
+Initilization and starts the game loop
+Basically it Calls Game::Init()
+and then loop the following:
+1 Event Polling
+2 Game::Loop
+3 Game::Render
 
+Until the Game exits, then Game::Cleanup is called.
+Call Game::Execute after instansiating a Game
+*/
 void Game::Execute()
 {
-    Init();
+    if (!Init())
+        run == false;
+
     SDL_Event event;
     mainMenu = new Menu();
 
@@ -32,6 +50,11 @@ void Game::Execute()
     CleanUp();
 }
 
+/**
+Initilization for Game
+All dependencies are initiated
+@return true on success, false on fail
+*/
 bool Game::Init()
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
@@ -59,17 +82,27 @@ bool Game::Init()
     return true;
 }
 
+/**
+Pass call to base Event
+@return true on success, false on fail
+*/
 bool Game::Event(SDL_Event* event)
 {
     Event::OnEvent(event);
     return true;
 }
 
+/**
+Make the game exit on next Game loop
+*/
 void Game::Exit()
 {
     run = false;
 }
 
+/**
+Handle key down events
+*/
 void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
     if(mainMenu->Active())
@@ -150,6 +183,9 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     }
 }
 
+/**
+Handle key up events
+*/
 void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
     if (player == NULL) return;
@@ -165,6 +201,9 @@ void Game::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 
 }
 
+/**
+Starts a new Game
+*/
 bool Game::NewGame()
 {
     Camera* cam = new Camera();
@@ -190,6 +229,10 @@ bool Game::NewGame()
     return true;
 }
 
+/**
+Save current running Game
+@return true on success, false on fail
+*/
 bool Game::SaveGame()
 {
     ofstream savefile;
@@ -211,6 +254,10 @@ bool Game::SaveGame()
     return true;
 }
 
+/**
+Load the saved Game
+@return true on success, false on fail
+*/
 bool Game::LoadGame()
 {
     Sprite::Cleanup();
@@ -238,6 +285,9 @@ bool Game::LoadGame()
     return true;
 }
 
+/**
+Update the game timers and Updates all Sprites
+*/
 void Game::Loop()
 {
     runTime = SDL_GetTicks();
@@ -254,6 +304,9 @@ void Game::Loop()
     //updateramenyy
 }
 
+/**
+Render all game components
+*/
 void Game::Render()
 {
     if(!mainMenu->Active())
@@ -271,6 +324,9 @@ void Game::Render()
     SDL_Flip(surface);
 }
 
+/**
+Cleans up everything to make a smooth exit
+*/
 void Game::CleanUp()
 {
     SDL_FreeSurface(surface);

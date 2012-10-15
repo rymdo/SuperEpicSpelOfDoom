@@ -4,14 +4,23 @@ using namespace std;
 
 
 //static members
-int Tile::width = 64;
-int Tile::height = 64;
+int Tile::width = 64;   //Tile width
+int Tile::height = 64;  //Tile height
 
+/**
+Tile Constructor
+@param X    X position
+@param Y    Y position
+*/
 Tile::Tile(int X, int Y) : Sprite(X, Y)
 {
 
 }
 
+/**
+    Load all tiles
+    @return true on success, false on fail
+*/
 bool Tile::loadAll()
 {
     ifstream in("files/maps/map_world.txt");
@@ -43,16 +52,20 @@ bool Tile::loadAll()
             filepath.append(".png");
 
             Sprite* tmpSprite = new Sprite(column*width, row*height);
-            if(cStr.compare("c") == 0)
-                tmpSprite->setCollidable(true);
-            else if(cStr.compare("d") == 0)
-                tmpSprite->setCollidable(true);
-            else if(cStr.compare("f") == 0)
-                tmpSprite->setCollidable(true);
-            else if(cStr.compare("g") == 0)
-                tmpSprite->setCollidable(true);
-            else if(cStr.compare("h") == 0)
-                tmpSprite->setCollidable(true);
+
+            switch((int)c)
+            {
+                case (int)'c':
+                case (int)'d':
+                case (int)'f':
+                case (int)'g':
+                case (int)'h':
+                    tmpSprite->setCollidable(true);
+                break;
+                default:
+                    tmpSprite->setCollidable(false);
+                break;
+            }
 
             tmpSprite->Load(filepath);
 

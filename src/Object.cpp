@@ -10,11 +10,11 @@
 using namespace std;
 /**
 Kontruktor för Object
-@param X X position
-@param Y - afndf
-@param Z - he
-@param FPS - hehe
-@param FrameHeight - test
+@param X            X position
+@param Y            Y position
+@param Z            Z position (depth)
+@param FPS          'Frames per Second' for animation
+@param FrameHeight  Height of one frame in Spritemap
 */
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
@@ -23,11 +23,20 @@ Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y,
     isCollidable = true;
 }
 
+/**
+Update the Object, also moves it with Object::Move
+@param gameTime     Time(ms) of game
+@param timeElapsed  Time(ms) since last update/draw
+*/
 void Object::Update(Uint32 gameTime, Uint32 timeElapsed)
 {
     Move(timeElapsed);
 }
 
+/**
+Moves the sprite
+@param timeElapsed      Time(ms) since last update/draw
+*/
 void Object::Move(Uint32 timeElapsed)
 {
     vec.Normalize();
@@ -36,38 +45,58 @@ void Object::Move(Uint32 timeElapsed)
         lastVec = vec;
 
     float currentMovement = timeElapsed * (PPS/1000.0);
-    //vec = vec * currentMovement;
     vec *= currentMovement;
 
     x += vec.x;
     y += vec.y;
 }
 
+/**
+Set X movement
+@param X      X movement
+*/
 void Object::SetMovementX(float X)
 {
     vec.x = X;
 }
 
+/**
+Set Y movement
+@param Y      Y movement
+*/
 void Object::SetMovementY(float Y)
 {
     vec.y = Y;
 }
 
+/**
+@return The movement Vector(Vec)
+*/
 Vec Object::getVec()
 {
     return vec;
 }
 
+/**
+@return The previous movement Vector(Vec)
+*/
 Vec Object::getLastVec()
 {
     return lastVec;
 }
 
+/**
+Sets the previous movement Vector(Vec)
+*/
 void Object::setLastVec(Vec v)
 {
     lastVec=v;
 }
 
+/**
+Check collision with other objects
+@param ID of object
+*/
 void Object::checkCollison(int ID)
 {
     if(isCollidable)
