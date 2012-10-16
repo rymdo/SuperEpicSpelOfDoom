@@ -4,16 +4,26 @@
 
 using namespace std;
 
+/**
+Default constructor for Event
+*/
 Event::Event()
 {
     //ctor
 }
 
+/**
+Default destructor for Event
+*/
 Event::~Event()
 {
     //dtor
 }
 
+/**
+Handles input from user
+@param event an event caused by input
+*/
 void Event::OnEvent(SDL_Event* event) {
 
 	switch(event->type) {

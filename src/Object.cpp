@@ -8,6 +8,7 @@
 #include "../include/sprite.h"
 
 using namespace std;
+
 /**
 Kontruktor för Object
 @param X            X position
@@ -167,6 +168,9 @@ void Object::OnHit(Sprite* s)
     }
 }
 
+/**
+Default destructor for Object
+*/
 Object::~Object()
 {
     //dtor

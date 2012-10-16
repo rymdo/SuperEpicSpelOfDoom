@@ -11,7 +11,7 @@ Game::Game()
 }
 
 /**
-Destructor for Game
+Default destructor for Game
 */
 Game::~Game()
 {

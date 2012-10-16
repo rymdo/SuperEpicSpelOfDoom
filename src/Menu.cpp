@@ -15,7 +15,7 @@ Menu::Menu()
 }
 
 /**
-Default destructor
+Default destructor for Menu
 */
 Menu::~Menu()
 {
