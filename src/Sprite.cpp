@@ -114,7 +114,6 @@ static: Destroys all current Sprites
 
 /**
 static: Updates all sprites. Iterates through all Sprite's and calls Sprite::Update for each of them
-@param dest         Draw onto this surface
 @param gameTime     Time(ms) of game
 @param timeElapsed  Time(ms) since last update/draw
 */

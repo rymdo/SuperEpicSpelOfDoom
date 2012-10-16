@@ -197,7 +197,7 @@ static: Draws a surface (SDL_Surface*) onto another surface (SDL_Surface*)
 
 /**
 static: Set the camera which Draw depends on
-@param cam     A camera
+@param a     A camera
 */
 /*static*/void Surface::setCamera(Camera* a)
 {

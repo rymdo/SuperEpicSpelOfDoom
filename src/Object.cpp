@@ -135,7 +135,7 @@ void Object::checkCollison()
 
 /**
 Handle a hit
-@param Sprite that hits
+@param s Sprite that hits
 */
 void Object::OnHit(Sprite* s)
 {
