@@ -115,6 +115,7 @@ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, 
 {
     if(dest == NULL || src == NULL)
     {
+        cout << "src/dest is NULL";
         return false;
     }
 
@@ -152,6 +153,7 @@ Make sure to call Surface::setCamera before calling Draw
 {
     if(dest == NULL || src == NULL)
     {
+        cout << "dest/src NULL" << endl;
         return false;
     }
 
@@ -160,15 +162,21 @@ Make sure to call Surface::setCamera before calling Draw
     y -= Surface::cam->getY();
 
     if(x < -(src->w) || x>=Surface::cam->getW() || y < -(src->h) || y >= Surface::cam->getH())
+    {
         return false;
+    }
 
     SDL_Rect destR;
     destR.x = x;
     destR.y = y;
 
-    SDL_BlitSurface(src, NULL, dest, &destR);
+    if (SDL_BlitSurface(src, NULL, dest, &destR) == 0)
+    {
+        return true;
+    }
 
-    return true;
+    cout << "fail to blit...";
+    return false;
 }
 
 /**

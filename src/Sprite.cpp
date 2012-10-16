@@ -48,12 +48,16 @@ void Sprite::setFPS(int FPS)
 Loads a image file via Surface::Load
 @param file     path to image
 */
-void Sprite::Load(string file)
+bool Sprite::Load(string file)
 {
     src = Surface::Load((char*)file.c_str());
 
     if (frameHeight != 0 && src != NULL)
         totalFrames = (src->h/frameHeight);
+
+    if (src == NULL) return false;
+
+    return true;
 }
 
 /**
@@ -65,9 +69,13 @@ Draws the Sprite surface/image onto a SDL_Surface* via Surface::Draw
 */
 bool Sprite::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
-    if (src == NULL) return false;
+    if (src == NULL)
+    {
+        cout << "src is NULL";
+        return false;
+    }
 
-    if (frameHeight == 0)
+    if (frameHeight == 0 || frameTime == 1)
         return Surface::Draw(dest, src, x, y);
 
     int frame = gameTime/frameTime;
@@ -98,10 +106,25 @@ static: Draws all sprites. Iterates through all Sprite's and calls Sprite::Draw 
     //sorterar vektorn efter vilket lager de ligger i (vilken z-koordinat de har) i stigande ordn.
     sort(list.begin(), list.end(), Sprite::zSort);
 
+    int drawed = 0;
+    bool ret;
     for(int i=0; i<list.size(); i++)
     {
-        list[i]->Draw(dest, gameTime, timeElapsed);
+        ret = list[i]->Draw(dest, gameTime, timeElapsed);
+
+        if(ret == true)
+            drawed++;
     }
+    //cout << drawed << "/" << list.size() << endl;
+
+    /*vector<Sprite*>::iterator it;
+
+    for (it=list.begin() ; it < list.end(); it++)
+    {
+        if ((*it)->Draw(dest, gameTime, timeElapsed))
+            drawed++;
+    }*/
+    cout << drawed << "/" << list.size() << endl;
 }
 
 /**

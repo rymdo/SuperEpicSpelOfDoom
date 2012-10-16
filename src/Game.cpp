@@ -177,9 +177,9 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
     if(sym == SDLK_SPACE)
     {
-        cout << "Player x: " << player->getPosX() << " y: " << player->getPosY() << endl;
-        Object* testObj = new Object(player->getPosX(), player->getPosY()+50, 10, 3, 50);
-        testObj->Load("files/sprites/cinnamonbun.png");
+        Object* testObj = new Object(player->getPosX(), player->getPosY()+50, 10);
+        if (testObj->Load("files/sprites/cinnamonbun.png"))
+            cout << "Player x: " << testObj->getPosX() << " y: " << testObj->getPosY() << endl;
     }
 }
 
@@ -212,14 +212,8 @@ bool Game::NewGame()
     if (!Tile::loadAll())
         return false;
 
-    player = new Player(cam, 500, 500, 20);
+    player = new Player(cam, 620, 810, 20);
     player->Load();
-
-    Sprite* monk1 = new Sprite(32, 110, 10, 3, 32);
-    monk1->Load("files/sprites/monk/monk_stand_front.png");
-
-    Sprite* monk3 = new Sprite(96, 110, 10, 3, 32);
-    monk3->Load("files/sprites/monk/monk_stand_back.png");
 
     Object* poke = new Object(600, 700, 10, 1, 100);
     poke->Load("files/sprites/poke.png");
@@ -247,7 +241,7 @@ bool Game::SaveGame()
     Vec v = player->getLastVec();
 
     savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y;
-    popUp=new Popup("Game saved successfully!", runTime);
+    popUp = new Popup("Game saved successfully!", runTime);
 
     savefile.close();
 

@@ -12,7 +12,7 @@ Tile Constructor
 @param X    X position
 @param Y    Y position
 */
-Tile::Tile(int X, int Y) : Sprite(X, Y)
+Tile::Tile(float X, float Y) : Sprite(X, Y, 5)
 {
 
 }

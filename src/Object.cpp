@@ -20,6 +20,8 @@ Kontruktor för Object
 Object::Object(float X, float Y, int Z, int FPS, int FrameHeight) : Sprite(X, Y, Z, FPS, FrameHeight)
 {
     isCollidable = true;
+    lastVec.x = 0;
+    lastVec.y = 0;
 }
 
 /**
@@ -39,6 +41,8 @@ Moves the sprite
 */
 void Object::Move(Uint32 timeElapsed)
 {
+    if(vec.Abs() == 0) return;
+
     vec.Normalize();
 
     if(vec.Abs() != 0)
@@ -99,7 +103,7 @@ Check collision with all other objects
 void Object::checkCollison()
 {
     if(!isCollidable) return; //if not set to be able to collide, dont check collisions
-    if(getVec().Abs() == 0) return; //if not moving, dont check collisions
+    if(vec.Abs() == 0) return; //if not moving, dont check collisions
 
     bool isColliding;
     for(int i = 0; i < list.size(); i++)

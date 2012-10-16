@@ -19,7 +19,7 @@ class Sprite
         Sprite(float X=0, float Y=0, int Z=0, int FPS = 0, int FrameHeight = 0);
         virtual         ~Sprite();
 
-        virtual void    Load(string file);
+        virtual bool    Load(string file);
         virtual bool    Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed);
         virtual void    Update(Uint32 gameTime, Uint32 timeElapsed);
 
