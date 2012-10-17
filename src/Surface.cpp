@@ -135,9 +135,14 @@ bool Surface::Draw(SDL_Surface* dest, SDL_Surface* src, int dest_x, int dest_y, 
     srcR.w = src_w;
     srcR.h = src_h;
 
-    SDL_BlitSurface(src, &srcR, dest, &destR);
 
-    return true;
+    if (SDL_BlitSurface(src, &srcR, dest, &destR) == 0)
+    {
+        return true;
+    }
+
+    cout << "fail to blit...";
+    return false;
 }
 
 /**

@@ -124,7 +124,7 @@ static: Draws all sprites. Iterates through all Sprite's and calls Sprite::Draw 
         if ((*it)->Draw(dest, gameTime, timeElapsed))
             drawed++;
     }*/
-    cout << drawed << "/" << list.size() << endl;
+    //cout << drawed << "/" << list.size() << endl;
 }
 
 /**

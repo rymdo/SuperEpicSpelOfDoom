@@ -51,7 +51,7 @@ bool Tile::loadAll()
             filepath.append(cStr);
             filepath.append(".png");
 
-            Sprite* tmpSprite = new Sprite(column*width, row*height);
+            Tile* tmp = new Tile(column*width, row*height);
 
             switch((int)c)
             {
@@ -60,14 +60,14 @@ bool Tile::loadAll()
                 case (int)'f':
                 case (int)'g':
                 case (int)'h':
-                    tmpSprite->setCollidable(true);
+                    tmp->setCollidable(true);
                 break;
                 default:
-                    tmpSprite->setCollidable(false);
+                    tmp->setCollidable(false);
                 break;
             }
 
-            tmpSprite->Load(filepath);
+            tmp->Load(filepath);
 
             column++;
         }

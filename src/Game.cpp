@@ -292,6 +292,10 @@ void Game::Loop()
         gameTime = now;
 
         Sprite::UpdateAll(gameTime, timeElapsed);
+
+        //Set up a delay. No need to run the game over 60FPS
+        if (timeElapsed < 16)
+            SDL_Delay(16-timeElapsed);
     //SDL_Delay(30);
     }
 
@@ -314,6 +318,7 @@ void Game::Render()
         /*Surface::Draw(surface, text_render_test, 100, 100);
         text_render_test = TTF_RenderText_Solid(arial_test, "HELLO WORLD!", color_test);*/
     }
+
     popUp->DrawAll(surface, runTime);
     SDL_Flip(surface);
 }
