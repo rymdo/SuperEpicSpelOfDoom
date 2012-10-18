@@ -177,9 +177,8 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
     if(sym == SDLK_SPACE)
     {
-        Object* testObj = new Object(player->getPosX(), player->getPosY()+50, 10);
-        if (testObj->Load("files/sprites/cinnamonbun.png"))
-            cout << "Player x: " << testObj->getPosX() << " y: " << testObj->getPosY() << endl;
+        player->placeItem(runTime);
+
     }
 }
 
@@ -240,7 +239,9 @@ bool Game::SaveGame()
 
     Vec v = player->getLastVec();
 
-    savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y;
+
+    savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y << "\n";
+    player->saveItems(savefile);
     popUp = new Popup("Game saved successfully!", runTime);
 
     savefile.close();
@@ -271,11 +272,14 @@ bool Game::LoadGame()
 
     //if(player == NULL) return false;
     player->setPos(x,y);
+
+    player->loadItems(loadfile);
+
     loadfile.close();
     v.x=a;
     v.y=b;
     player->setLastVec(v);
-    //fixa kanelbullar, urladdning, att man kan loada ett spel direkt
+
     return true;
 }
 
@@ -298,8 +302,6 @@ void Game::Loop()
             SDL_Delay(16-timeElapsed);
     //SDL_Delay(30);
     }
-
-    //updateramenyy
 }
 
 /**
@@ -309,14 +311,12 @@ void Game::Render()
 {
     if(!mainMenu->Active())
     {
-        //Surface::Draw(surface, surface_test, 0, 0);
         Sprite::DrawAll(surface, gameTime, timeElapsed);
     }
     else
     {
         mainMenu->Draw(surface);
-        /*Surface::Draw(surface, text_render_test, 100, 100);
-        text_render_test = TTF_RenderText_Solid(arial_test, "HELLO WORLD!", color_test);*/
+
     }
 
     popUp->DrawAll(surface, runTime);

@@ -103,7 +103,7 @@ static: Draws all sprites. Iterates through all Sprite's and calls Sprite::Draw 
 */
 /*static*/ void Sprite::DrawAll(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
 {
-    //sorterar vektorn efter vilket lager de ligger i (vilken z-koordinat de har) i stigande ordn.
+
     sort(list.begin(), list.end(), Sprite::zSort);
 
     int drawed = 0;

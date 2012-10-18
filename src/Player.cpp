@@ -110,6 +110,70 @@ bool Player::Draw(SDL_Surface* dest, Uint32 gameTime, Uint32 timeElapsed)
     return Sprite::Draw(dest, gameTime, timeElapsed);
 }
 
+/**
+Places an item if less the 10 are already dislayed
+@param time         A time variable that makes call to Popup from the function possible
+@return true on success, false on fail
+*/
+bool Player::placeItem(Uint32 time)
+{
+    if(items.size()<=9)
+    {
+        Vec temp = lastVec;
+        temp.Normalize();
+
+        Object* testObj = new Object(0, 0, 10);
+        if (testObj->Load("files/sprites/cinnamonbun.png"))
+        {
+            float newX = (x+16+50*lastVec.x)-(testObj->getHeight()/2);
+            float newY = (y+16+50*lastVec.y)-(testObj->getWidth()/2);
+            testObj->setPos(newX, newY);
+            items.push_back(testObj);
+            string str = "Congratz!! You have successfully stored ";
+            string number = static_cast<ostringstream*>( &(ostringstream() << items.size()) )->str();
+            str.append(number);
+            str.append(" bun(s) in your garden! YAY!");
+
+
+            popUp= new Popup(str , time);
+
+             cout << "Player x: " << testObj->getPosX() << " y: " << testObj->getPosY() << endl;
+        }
+        return true;
+    }
+    popUp=new Popup("NO MORE BUNS 4 U!!", time);
+    return false;
+}
+
+/**
+Saves items that has been placed in the world
+@param &file         A stream, passed by reference
+*/
+void Player::saveItems(ofstream &file)
+{
+    for(int i = 0; i<items.size(); i++)
+    {
+        file << items[i]->getPosX() << " " << items[i]->getPosY() << "\n";
+    }
+}
+
+/**
+Loads placed items
+@param dest         A stream, passed by reference
+*/
+void Player::loadItems(ifstream &file)
+{
+    while(file.good())
+    {
+        float x;
+        float y;
+        file >> x >> y;
+        Object * testObj = new Object(x,y,10);
+        testObj->Load("files/sprites/cinnamonbun.png");
+        items.push_back(testObj);
+    }
+}
+
 Player::~Player()
 {
     //dtor
