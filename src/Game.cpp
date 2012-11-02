@@ -137,6 +137,8 @@ void Game::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
             {
                 if (LoadGame())
                     mainMenu->SetState();
+                else
+                    popUp=new Popup("There is no game to load!", runTime);
             }
 
             if (s == "Save")
@@ -228,17 +230,16 @@ Save current running Game
 */
 bool Game::SaveGame()
 {
-    ofstream savefile;
-    savefile.open("save.txt");
-
     if(player==NULL)
     {
         popUp=new Popup("There is no game to save!", runTime);
         return false;
     }
 
-    Vec v = player->getLastVec();
+    ofstream savefile;
+    savefile.open("save.txt");
 
+    Vec v = player->getLastVec();
 
     savefile << player->getPosX() << " " << player->getPosY() << " " << v.x << " " << v.y << "\n";
     player->saveItems(savefile);
@@ -268,9 +269,16 @@ bool Game::LoadGame()
     Vec v;
     ifstream loadfile;
     loadfile.open("save.txt");
+
+    if (!loadfile.is_open())
+    {
+        Sprite::Cleanup();
+        player = NULL;
+        return false;
+    }
+
     loadfile >> x >> y >> a >> b;
 
-    //if(player == NULL) return false;
     player->setPos(x,y);
 
     player->loadItems(loadfile);
